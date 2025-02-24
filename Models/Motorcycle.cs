@@ -8,7 +8,7 @@ namespace ASPMotoDrive.Models
        
         public int ModelId { get; set; }
         public Model Models { get; set; }
-        public Condition TypeUsage { get; set; }
+        public TypeUsage TypeUsage { get; set; }
         public string CatalogueNumber { get; set; }
         public int EnginePower { get; set; }
         public string ImageURL { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace ASPMotoDrive.Models
 {
    
-        public enum Condition { Нов, Употребяван }
+        public enum TypeUsage { Нов, Употребяван }
     
 }

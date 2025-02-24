@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-ASPMotoDrive-e4bbaa91-91c8-4750-ad01-d93a9effd7fb")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ASPMotoDrive")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27f7ef778e7e56d220058441c14bc3ffa71bc6ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("ASPMotoDrive")]

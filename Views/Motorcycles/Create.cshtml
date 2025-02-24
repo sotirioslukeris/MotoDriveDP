@@ -1,0 +1,64 @@
+﻿@model ASPMotoDrive.Models.Motorcycle
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Motorcycle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ModelId" class="control-label"></label>
+                <select asp-for="ModelId" class ="form-control" asp-items="ViewBag.ModelId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeUsage" class="control-label"></label>
+                <select asp-for="TypeUsage"asp-items="@Html.GetEnumSelectList<TypeUsage>()"> class="form-control"></select>
+                <span asp-validation-for="TypeUsage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatalogueNumber" class="control-label"></label>
+                <input asp-for="CatalogueNumber" class="form-control" />
+                <span asp-validation-for="CatalogueNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnginePower" class="control-label"></label>
+                <span asp-validation-for="EnginePower" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageURL" class="control-label"></label>
+                <input asp-for="ImageURL" class="form-control" />
+                <span asp-validation-for="ImageURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeMotor" class="control-label"></label>
+                <select asp-for="TypeMotor"asp-items="@Html.GetEnumSelectList<TypeMotor>()" class="form-control"></select>
+                <span asp-validation-for="TypeMotor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -10,8 +10,8 @@ namespace ASPMotoDrive.Models
         public int MotorcycleId { get; set; }
         public string Description { get; set; }
         public Motorcycle Motorcycles { get; set; }
-        public DateTime DateReservation { get; set; }
-        public DateTime DateRegister { get;set; }
+        public DateTime DateReservation { get; set; } = DateTime.Now;
+        public DateTime DateRegister { get;set; } = DateTime.Now;
 
 
     }

@@ -8,25 +8,26 @@ using Microsoft.EntityFrameworkCore;
 using ASPMotoDrive.Data;
 using ASPMotoDrive.Models;
 
+
 namespace ASPMotoDrive.Controllers
 {
-    public class ModelsController : Controller
+    public class MotorcyclesController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ModelsController(ApplicationDbContext context)
+        public MotorcyclesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Models
+        // GET: Motorcycles
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Models.Include(m => m.Brands);
+            var applicationDbContext = _context.Motorcycles.Include(m => m.Models);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Models/Details/5
+        // GET: Motorcycles/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,68 +35,72 @@ namespace ASPMotoDrive.Controllers
                 return NotFound();
             }
 
-            var model = await _context.Models
-                .Include(m => m.Brands)
+            var motorcycle = await _context.Motorcycles
+                .Include(m => m.Models)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (model == null)
+            if (motorcycle == null)
             {
                 return NotFound();
             }
 
-            return View(model);
+            return View(motorcycle);
         }
 
-        // GET: Models/Create
+        // GET: Motorcycles/Create
         public IActionResult Create()
         {
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name");
+            ViewData["ModelId"] = new SelectList(_context.Models, "Id", "Id");
             return View();
         }
 
-        // POST: Models/Create
+        // POST: Motorcycles/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        
-        public async Task<IActionResult> Create([Bind("Id,Name,BrandId,DateRegister")] Model model)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,ModelId,TypeUsage,CatalogueNumber,EnginePower,ImageURL,Price,TypeMotor,Description")] Motorcycle motorcycle)
         {
-            
+            motorcycle.LastUpdate = DateTime.Now;
             if (ModelState.IsValid)
             {
-                _context.Add(model);
+                _context.Add(motorcycle);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name", model.BrandId);
-            return View(model);
-            
+            ViewData["ModelId"] = new SelectList(_context.Models, "Id", "Name", motorcycle.ModelId);
+            return View(motorcycle);
         }
 
-        // GET: Models/Edit/5
+        // GET: Motorcycles/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            
             if (id == null)
             {
                 return NotFound();
             }
 
-            var model = await _context.Models.FindAsync(id);
-            if (model == null)
+            var motorcycle = await _context.Motorcycles.FindAsync(id);
+            
+            if (motorcycle == null)
             {
                 return NotFound();
             }
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name", model.BrandId);
-            return View(model);
+
+            motorcycle.LastUpdate = DateTime.Now;
+            ViewData["ModelId"] = new SelectList(_context.Models, "Id", "Name", motorcycle.ModelId);
+            return View(motorcycle);
         }
 
-        // POST: Models/Edit/5
+        // POST: Motorcycles/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,BrandId,DateRegister")] Model model)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ModelId,TypeUsage,CatalogueNumber,EnginePower,ImageURL,Price,TypeMotor,Description")] Motorcycle motorcycle)
         {
-            if (id != model.Id)
+            motorcycle.LastUpdate = DateTime.Now;   
+            if (id != motorcycle.Id)
             {
                 return NotFound();
             }
@@ -104,12 +109,12 @@ namespace ASPMotoDrive.Controllers
             {
                 try
                 {
-                    _context.Update(model);
+                    _context.Update(motorcycle);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ModelExists(model.Id))
+                    if (!MotorcycleExists(motorcycle.Id))
                     {
                         return NotFound();
                     }
@@ -120,11 +125,11 @@ namespace ASPMotoDrive.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BrandId"] = new SelectList(_context.Brands, "Id", "Name", model.BrandId);
-            return View(model);
+            ViewData["ModelId"] = new SelectList(_context.Models, "Id", "Id", motorcycle.ModelId);
+            return View(motorcycle);
         }
 
-        // GET: Models/Delete/5
+        // GET: Motorcycles/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,35 +137,35 @@ namespace ASPMotoDrive.Controllers
                 return NotFound();
             }
 
-            var model = await _context.Models
-                .Include(m => m.Brands)
+            var motorcycle = await _context.Motorcycles
+                .Include(m => m.Models)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (model == null)
+            if (motorcycle == null)
             {
                 return NotFound();
             }
 
-            return View(model);
+            return View(motorcycle);
         }
 
-        // POST: Models/Delete/5
+        // POST: Motorcycles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var model = await _context.Models.FindAsync(id);
-            if (model != null)
+            var motorcycle = await _context.Motorcycles.FindAsync(id);
+            if (motorcycle != null)
             {
-                _context.Models.Remove(model);
+                _context.Motorcycles.Remove(motorcycle);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ModelExists(int id)
+        private bool MotorcycleExists(int id)
         {
-            return _context.Models.Any(e => e.Id == id);
+            return _context.Motorcycles.Any(e => e.Id == id);
         }
     }
 }

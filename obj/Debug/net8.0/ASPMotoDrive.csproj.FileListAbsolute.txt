@@ -265,3 +265,4 @@ C:\Users\banan\source\repos\ASPMotoDrive\bin\Debug\net8.0\runtimes\win\lib\net7.
 C:\Users\banan\source\repos\ASPMotoDrive\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\banan\source\repos\ASPMotoDrive\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\banan\source\repos\ASPMotoDrive\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\banan\source\repos\ASPMotoDrive\obj\Debug\net8.0\ASPMotoDrive.sourcelink.json
