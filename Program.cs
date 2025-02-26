@@ -1,5 +1,6 @@
 using ASPMotoDrive.Data;
 using ASPMotoDrive.Models;
+using ASPMotoDrive.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,10 +16,15 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<User>(
     options => options.SignIn.RequireConfirmedAccount = false)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 builder.Services.AddControllers(op=>op.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 
 var app = builder.Build();
+
+//!!!! Стартиране на Service файла
+app.PrepareDataBase().Wait();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

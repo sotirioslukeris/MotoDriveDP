@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ASPMotoDrive.Data;
 using ASPMotoDrive.Models;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace ASPMotoDrive.Controllers
@@ -47,9 +48,10 @@ namespace ASPMotoDrive.Controllers
         }
 
         // GET: Motorcycles/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
-            ViewData["ModelId"] = new SelectList(_context.Models, "Id", "Id");
+            ViewData["ModelId"] = new SelectList(_context.Models, "Name", "Id");
             return View();
         }
 
@@ -58,6 +60,8 @@ namespace ASPMotoDrive.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,ModelId,TypeUsage,CatalogueNumber,EnginePower,ImageURL,Price,TypeMotor,Description")] Motorcycle motorcycle)
         {
             motorcycle.LastUpdate = DateTime.Now;
@@ -72,6 +76,7 @@ namespace ASPMotoDrive.Controllers
         }
 
         // GET: Motorcycles/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             
@@ -97,6 +102,7 @@ namespace ASPMotoDrive.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,ModelId,TypeUsage,CatalogueNumber,EnginePower,ImageURL,Price,TypeMotor,Description")] Motorcycle motorcycle)
         {
             motorcycle.LastUpdate = DateTime.Now;   
@@ -130,6 +136,7 @@ namespace ASPMotoDrive.Controllers
         }
 
         // GET: Motorcycles/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -147,10 +154,11 @@ namespace ASPMotoDrive.Controllers
 
             return View(motorcycle);
         }
-
+        
         // POST: Motorcycles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var motorcycle = await _context.Motorcycles.FindAsync(id);
