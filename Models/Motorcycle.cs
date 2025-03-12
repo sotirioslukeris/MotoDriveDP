@@ -5,7 +5,6 @@ namespace ASPMotoDrive.Models
     public class Motorcycle
     {
         public int Id { get; set; }
-       
         public int ModelId { get; set; }
         public Model Models { get; set; }
         public TypeUsage TypeUsage { get; set; }
@@ -13,6 +12,7 @@ namespace ASPMotoDrive.Models
         public int EnginePower { get; set; }
         public string ImageURL { get; set; }
         public double Price { get; set; }
+        
         public TypeMotor TypeMotor { get; set; }
         public string Description { get; set; }
         public DateTime LastUpdate { get; set; }

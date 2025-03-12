@@ -24,6 +24,7 @@ namespace ASPMotoDrive.Controllers
         // GET: Motorcycles
         public async Task<IActionResult> Index()
         {
+              
             var applicationDbContext = _context.Motorcycles.Include(m => m.Models);
             return View(await applicationDbContext.ToListAsync());
         }
@@ -48,10 +49,10 @@ namespace ASPMotoDrive.Controllers
         }
 
         // GET: Motorcycles/Create
-        [Authorize(Roles = "Admin")]
+        
         public IActionResult Create()
         {
-            ViewData["ModelId"] = new SelectList(_context.Models, "Name", "Id");
+            ViewData["ModelId"] = new SelectList(_context.Models, "Id", "Name");
             return View();
         }
 
@@ -61,8 +62,8 @@ namespace ASPMotoDrive.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Create([Bind("Id,ModelId,TypeUsage,CatalogueNumber,EnginePower,ImageURL,Price,TypeMotor,Description")] Motorcycle motorcycle)
+        
+        public async Task<IActionResult> Create([Bind("ModelId,TypeUsage,CatalogueNumber,EnginePower,ImageURL,Price,TypeMotor,Description")] Motorcycle motorcycle)
         {
             motorcycle.LastUpdate = DateTime.Now;
             if (ModelState.IsValid)

@@ -54,12 +54,19 @@ namespace ASPMotoDrive.Migrations
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
 
+                    b.Property<string>("CountryOfManuf")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("DateRegister")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("YearOfManuf")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -122,9 +129,6 @@ namespace ASPMotoDrive.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DateRegister")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DateReservation")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")

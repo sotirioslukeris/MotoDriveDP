@@ -81,7 +81,7 @@ namespace ASPMotoDrive.Areas.Identity.Pages.Account
            
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "Това поле не съответства на паролата!")]
             public string ConfirmPassword { get; set; }
 
             [Required(ErrorMessage = "Това поле е задължително!")]
@@ -99,6 +99,10 @@ namespace ASPMotoDrive.Areas.Identity.Pages.Account
             [Display(Name = "Address")]
             public string Address { get; set; }
 
+            [Display(Name = "PhoneNumber")]
+            [StringLength(10,ErrorMessage = "Некоректрно въведен телефонен номер")]
+            public string PhoneNumber { get; set; }
+
             
         }
 
@@ -115,18 +119,25 @@ namespace ASPMotoDrive.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = CreateUser();
-                user.Email = Input.Email;
-                user.UserName = Input.Username;
-                user.LastName = Input.LastName;
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+                //var user = CreateUser();
+                User user = new User
+                {
+                    Email = Input.Email,
+                    UserName = Input.Username,
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName,
+                    Address = Input.Address,
+                    PhoneNumber = Input.PhoneNumber,
+                };
+                
+                await _userStore.SetUserNameAsync(user, Input.Username, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-                var result = await _userManager.CreateAsync(user, Input.Password);
+                var result = await _userManager.CreateAsync(user, Input.Password); // Създава запис в базата от данни
 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
+                    await _userManager.AddToRoleAsync(user, "User"); //Задаване на роля на създаденият потребител
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

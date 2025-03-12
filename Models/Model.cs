@@ -6,8 +6,9 @@
         public string Name { get; set; }
         public int BrandId { get; set; }
         public Brand Brands { get; set; }
-        public DateTime DateRegister { get; set; } = DateTime.Now;
-
+        public int YearOfManuf { get; set; }
+        public string CountryOfManuf { get; set; }
+        public DateTime DateRegister { get; set; } 
         public ICollection<Motorcycle> Motorcycles { get; set; }
     }
 }
