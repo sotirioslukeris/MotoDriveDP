@@ -24,9 +24,13 @@
                 <span asp-validation-for="BrandId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DateRegister" class="control-label"></label>
-                <input asp-for="DateRegister" class="form-control" />
-                <span asp-validation-for="DateRegister" class="text-danger"></span>
+                <label asp-for="CountryOfManuf" class="control-label">Държава на производство</label>
+                <input asp-for="CountryOfManuf" class="form-control"></>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="YearOfManuf" class="control-label">Година на производство</label>
+                <input asp-for="YearOfManuf" class="form-control"></>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

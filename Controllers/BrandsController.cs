@@ -54,7 +54,7 @@ namespace ASPMotoDrive.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Brand brand)
+        public async Task<IActionResult> Create([Bind("Name,Description")] Brand brand)
         {
             if (ModelState.IsValid)
             {

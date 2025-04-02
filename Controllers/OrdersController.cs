@@ -8,17 +8,20 @@ using Microsoft.EntityFrameworkCore;
 using ASPMotoDrive.Data;
 using ASPMotoDrive.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASPMotoDrive.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<User> _userManager;
-        public OrdersController(ApplicationDbContext context,UserManager<User> userManager)
+
+        public OrdersController(ApplicationDbContext context, UserManager<User> userManger)
         {
             _context = context;
-            _userManager = userManager;
+            _userManager = userManger;
         }
 
         // GET: Orders
@@ -50,9 +53,8 @@ namespace ASPMotoDrive.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-
-            ViewData["ModelId"] = new SelectList(_context.Models, "Id", "Name");
-            return View();
+            ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Name", "Id");
+            return View("Create");
         }
 
         // POST: Orders/Create
@@ -60,17 +62,17 @@ namespace ASPMotoDrive.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,MotorcycleId,Description,DateReservation,DateRegister")] Order order)
+        public async Task<IActionResult> Create([Bind("MotorcycleId,Description,Quantity,DateRegister")] Order order)
         {
             if (ModelState.IsValid)
             {
                 order.DateRegister = DateTime.Now;
-               
                 order.UserId = Guid.Parse(_userManager.GetUserId(User));
                 _context.Add(order);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Id", "Name", order.MotorcycleId);
             
             return View(order);
         }
@@ -88,8 +90,7 @@ namespace ASPMotoDrive.Controllers
             {
                 return NotFound();
             }
-            
-            ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Id", "Id", order.MotorcycleId);
+            ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Id", "Name", order.MotorcycleId);
             return View(order);
         }
 
@@ -98,7 +99,7 @@ namespace ASPMotoDrive.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,UserId,MotorcycleId,Description,DateReservation,DateRegister")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,MotorcycleId,UserId,Description,Quantity,DateRegister")] Order order)
         {
             if (id != order.Id)
             {
@@ -109,6 +110,7 @@ namespace ASPMotoDrive.Controllers
             {
                 try
                 {
+                    order.DateRegister = DateTime.Now;
                     _context.Update(order);
                     await _context.SaveChangesAsync();
                 }
@@ -125,7 +127,7 @@ namespace ASPMotoDrive.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Id", "Id", order.MotorcycleId);
+            ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Id", "Name", order.MotorcycleId);
             return View(order);
         }
 

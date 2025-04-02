@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using System.ComponentModel;
 
 namespace ASPMotoDrive.Models
 {
@@ -12,11 +13,13 @@ namespace ASPMotoDrive.Models
         public int EnginePower { get; set; }
         public string ImageURL { get; set; }
         public double Price { get; set; }
-        
+        public double Mileage { get; set; }
         public TypeMotor TypeMotor { get; set; }
         public string Description { get; set; }
         public DateTime LastUpdate { get; set; }
 
         public ICollection<Order> Orders { get; set; }
+
+        public Category Category { get; set; }
     }
 }

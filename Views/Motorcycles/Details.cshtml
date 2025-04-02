@@ -4,50 +4,62 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Детайли за  @Html.DisplayFor(model => model.Models.Name) </h1>
 
 <div>
     <h4>Motorcycle</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Models)
+            Модел
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Models.Id)
+            @Html.DisplayFor(model => model.Models.Name)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.TypeUsage)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TypeUsage)
+            Нов/Употребяван
+        </dd>
+        <dt class="col-sm-2">
+            Пробег
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mileage)км
+        </dd>
+        <dt class="col-sm-2">
+            Категория
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Category)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CatalogueNumber)
+            #Каталожен номер
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CatalogueNumber)
+            #@Html.DisplayFor(model => model.CatalogueNumber)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EnginePower)
+            Мощност
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EnginePower)
+            @Html.DisplayFor(model => model.EnginePower)cc
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageURL)
+            Изображение
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageURL)
+            <img src="@Html.DisplayFor(model => model.ImageURL)" alt="Alternate Text" />
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
+           Цена
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
+            @Html.DisplayFor(model => model.Price)лв
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TypeMotor)
+           Мотоциклет/Скутер
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.TypeMotor)

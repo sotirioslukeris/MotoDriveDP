@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Създай</h1>
 
-<h4>Model</h4>
+<h4>Модел</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,32 +22,29 @@
                 <select asp-for="BrandId" class ="form-control" asp-items="ViewBag.BrandId"></select>
             </div>
 
-            <div class="form-group">
-                <label asp-for="BrandId" class="control-label">Марка</label>
-                <select asp-for="BrandId" class="form-control" asp-items="ViewBag.BrandId"></select>
-            </div>
+           
 
             <div class="form-group">
                 <label asp-for="CountryOfManuf" class="control-label">Държава на производство</label>
-                <select asp-for="CountryOfManuf" class="form-control" asp-items="ViewBag.CountryOfManuf"></select>
+                <input asp-for="CountryOfManuf" class="form-control"></>
             </div>
 
             <div class="form-group">
                 <label asp-for="YearOfManuf" class="control-label">Година на производство</label>
-                <select asp-for="YearOfManuf" class="form-control" asp-items="ViewBag.YearOfManuf"></select>
+                <input asp-for="YearOfManuf" class="form-control"></input>
             </div>
 
             
             
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Създай" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Обратно към списъка</a>
 </div>
 
 @section Scripts {

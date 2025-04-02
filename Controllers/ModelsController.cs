@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ASPMotoDrive.Data;
 using ASPMotoDrive.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASPMotoDrive.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ModelsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -62,6 +64,7 @@ namespace ASPMotoDrive.Controllers
             
             if (ModelState.IsValid)
             {
+                model.DateRegister = DateTime.Now;
                 _context.Add(model);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -93,7 +96,7 @@ namespace ASPMotoDrive.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,BrandId,DateRegister")] Model model)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,BrandId,DateRegister,YearOfManuf,CountryOfManuf")] Model model)
         {
             if (id != model.Id)
             {
@@ -104,6 +107,7 @@ namespace ASPMotoDrive.Controllers
             {
                 try
                 {
+                    model.DateRegister = DateTime.Now;
                     _context.Update(model);
                     await _context.SaveChangesAsync();
                 }

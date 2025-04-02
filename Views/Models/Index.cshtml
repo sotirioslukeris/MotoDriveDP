@@ -13,35 +13,57 @@
     <thead>
         <tr>
             <th>
-                Модел
+                <span class="table-heading">Модел</span>
             </th>
             <th>
-                Марка
+                <span class="table-heading">Марка</span>
             </th>
             <th>
-                Дата на производство
+                <span class="table-heading">Година на производство</span>
             </th>
-            <th></th>
+            <th>
+                <span class="table-heading">Държава</span>
+            </th>
+            <th>
+                <span class="table-heading">Регистрация в системата</span>
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Brands.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateRegister)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brands.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YearOfManuf)г.
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CountryOfManuf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateRegister)
+                </td>
+                <td>
+
+                    @{
+                        if(User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.Id">Редактирай</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+                        
+                        }
+                        
+                }
+
+                <a asp-action="Details" asp-route-id="@item.Id">Детайли</a>
+                    <a asp-controller="Orders" asp-action="Create" asp-route-id="@item.Id">Поръчай</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

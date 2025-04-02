@@ -6,28 +6,37 @@
 
 <h1>Изтриване</h1>
 
-<h3>Сигурни ли сте, че искате да премахнете следният запис</h3>
+<h3>Изтриване?</h3>
 <div>
     <h4>Мотоциклет</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            Модел
-        </dt>
-        <dd class = "col-sm-10">
             Марка
-        </dd>
-        <dt class = "col-sm-2">
-            Дата на производство
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Brands.Id)
+            Модел
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateRegister)
+            Година на производство
+        </dt>
+        <dt class="col-sm-2">
+            Държава на производство
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateRegister)
+            @Html.DisplayFor(model => model.Brands.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YearOfManuf)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CountryOfManuf)
+        </dd>
+        <dd class="col-sm-10">
+            
         </dd>
     </dl>
     

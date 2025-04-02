@@ -87,6 +87,9 @@ namespace ASPMotoDrive.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Category")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -100,6 +103,9 @@ namespace ASPMotoDrive.Migrations
 
                     b.Property<DateTime>("LastUpdate")
                         .HasColumnType("datetime2");
+
+                    b.Property<double>("Mileage")
+                        .HasColumnType("float");
 
                     b.Property<int>("ModelId")
                         .HasColumnType("int");
@@ -138,6 +144,9 @@ namespace ASPMotoDrive.Migrations
                     b.Property<int>("MotorcycleId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
@@ -171,6 +180,9 @@ namespace ASPMotoDrive.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateRegister")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)

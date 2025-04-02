@@ -10,7 +10,10 @@ namespace ASPMotoDrive.Models
         public int Age { get; set; }
         public string Address { get; set; }
 
+        public DateTime DateRegister { get; set; }
         public ICollection<Order> Orders { get; set; }
+
+
         
     }
 }
