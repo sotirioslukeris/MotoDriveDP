@@ -18,6 +18,7 @@ namespace ASPMotoDrive.Models
         public string Description { get; set; }
         public DateTime LastUpdate { get; set; }
 
+        public string Colour { get; set; }
         public ICollection<Order> Orders { get; set; }
 
         public Category Category { get; set; }

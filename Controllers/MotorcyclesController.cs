@@ -8,11 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using ASPMotoDrive.Data;
 using ASPMotoDrive.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
+using System.Drawing.Drawing2D;
 
 
 namespace ASPMotoDrive.Controllers
 {
-    
+
     public class MotorcyclesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -25,7 +27,7 @@ namespace ASPMotoDrive.Controllers
         // GET: Motorcycles
         public async Task<IActionResult> Index()
         {
-              
+
             var applicationDbContext = _context.Motorcycles.Include(m => m.Models);
             return View(await applicationDbContext.ToListAsync());
         }
@@ -39,7 +41,7 @@ namespace ASPMotoDrive.Controllers
             }
 
             var motorcycle = await _context.Motorcycles
-                .Include(m => m.Models)
+                .Include(m => m.Models).Include(m => m.Models.Brands)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (motorcycle == null)
             {
@@ -63,8 +65,8 @@ namespace ASPMotoDrive.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        
-        public async Task<IActionResult> Create([Bind("ModelId,TypeUsage,Mileage,CatalogueNumber,EnginePower,ImageURL,Price,TypeMotor,Description,Category")] Motorcycle motorcycle)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Create([Bind("ModelId,TypeUsage,Mileage,Colour,CatalogueNumber,EnginePower,ImageURL,Price,TypeMotor,Description,Category")] Motorcycle motorcycle)
         {
             motorcycle.LastUpdate = DateTime.Now;
             if (ModelState.IsValid)
@@ -77,18 +79,20 @@ namespace ASPMotoDrive.Controllers
             return View(motorcycle);
         }
 
+
+
         // GET: Motorcycles/Edit/5
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
-            
+
             if (id == null)
             {
                 return NotFound();
             }
 
             var motorcycle = await _context.Motorcycles.FindAsync(id);
-            
+
             if (motorcycle == null)
             {
                 return NotFound();
@@ -98,16 +102,49 @@ namespace ASPMotoDrive.Controllers
             ViewData["ModelId"] = new SelectList(_context.Models, "Id", "Name", motorcycle.ModelId);
             return View(motorcycle);
         }
+        //GET/Models
+       
+        public IActionResult Models(double? price, string? brand, int? year, Enum? condition)
+        {
+            var motorcycles = _context.Motorcycles.Include(m => m.Models)
+               .Include(m => m.Models.Brands).ToList();
+
+            if (price.HasValue)
+            {
+
+                motorcycles = motorcycles.Where(x => x.Price <= price.Value).ToList();
+            }
+
+            if (!brand.IsNullOrEmpty())
+            {
+                if (brand == "all")
+                {
+                    //Motorcycles does not change
+                }
+                else
+                {
+                    motorcycles = motorcycles.Where(x => x.Models.Brands.Name == brand).ToList();
+                }
+            }
+            if (year.HasValue)
+            {
+                motorcycles = motorcycles.Where(x => x.Models.YearOfManuf == year).ToList();
+            }
+
+            return View(motorcycles);
+        }
+
+
 
         // POST: Motorcycles/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ModelId,TypeUsage,Mileage,CatalogueNumber,EnginePower,ImageURL,Price,TypeMotor,Description,Category,Mileage")] Motorcycle motorcycle)
+
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ModelId,TypeUsage,Mileage,Colour,CatalogueNumber,EnginePower,ImageURL,Price,TypeMotor,Description,Category,Mileage")] Motorcycle motorcycle)
         {
-            motorcycle.LastUpdate = DateTime.Now;   
+            motorcycle.LastUpdate = DateTime.Now;
             if (id != motorcycle.Id)
             {
                 return NotFound();
@@ -156,11 +193,11 @@ namespace ASPMotoDrive.Controllers
 
             return View(motorcycle);
         }
-        
+
         // POST: Motorcycles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-       
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var motorcycle = await _context.Motorcycles.FindAsync(id);

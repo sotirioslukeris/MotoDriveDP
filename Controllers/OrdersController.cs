@@ -51,10 +51,20 @@ namespace ASPMotoDrive.Controllers
         }
 
         // GET: Orders/Create
-        public IActionResult Create()
+        public async Task<IActionResult> ShoppingCart(int? id)
         {
-            ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Name", "Id");
-            return View("Create");
+            if(id == null)
+            {
+                return NotFound();
+            }
+            
+            var motorcycle = await _context.Motorcycles.SingleOrDefaultAsync(m => m.Id == id);
+
+            if(motorcycle == null)
+            {
+                return NotFound();
+            }
+            return View(motorcycle);
         }
 
         // POST: Orders/Create
@@ -62,19 +72,23 @@ namespace ASPMotoDrive.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MotorcycleId,Description,Quantity,DateRegister")] Order order)
+        public async Task<IActionResult> ShoppingCart([Bind("MotorcycleId,Description,Quantity,DateRegister")] Order order)
         {
+            List<Order> orders = new List<Order>();
+
             if (ModelState.IsValid)
             {
                 order.DateRegister = DateTime.Now;
                 order.UserId = Guid.Parse(_userManager.GetUserId(User));
                 _context.Add(order);
+                orders.Add(order);
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Id", "Name", order.MotorcycleId);
             
-            return View(order);
+            
+            return View(orders);
         }
 
         // GET: Orders/Edit/5
@@ -94,6 +108,8 @@ namespace ASPMotoDrive.Controllers
             return View(order);
         }
 
+
+        
         // POST: Orders/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.

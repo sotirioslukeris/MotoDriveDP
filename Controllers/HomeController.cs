@@ -18,6 +18,11 @@ namespace ASPMotoDrive.Controllers
             return View();
         }
 
+        public IActionResult Models()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

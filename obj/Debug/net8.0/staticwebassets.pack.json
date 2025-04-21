@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\ASPMotoDrive.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\HTML\\index.html",
+      "PackagePath": "staticwebassets\\HTML\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\HTML\\models.html",
+      "PackagePath": "staticwebassets\\HTML\\models.html"
+    },
+    {
+      "Id": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\Images\\background.jpg",
+      "PackagePath": "staticwebassets\\Images\\background.jpg"
+    },
+    {
+      "Id": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\Images\\de8bae12-7b90-46d1-89f6-9ff806d2dca3.png",
+      "PackagePath": "staticwebassets\\Images\\de8bae12-7b90-46d1-89f6-9ff806d2dca3.png"
+    },
+    {
       "Id": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

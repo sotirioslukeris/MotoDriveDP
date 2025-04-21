@@ -15,7 +15,29 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label">Марка</label>
-                <input asp-for="Name" class="form-control"  />
+                <select asp-for="Name" class="form-control">
+
+                    <option value="all">Всички</option>
+
+                    <option value="Honda">Honda
+
+                    </option>
+                    <option value="Yamaha">Yamaha
+
+                    </option>
+                    <option value="BMW">BMW
+
+                    </option>
+                    <option value="KTM">KTM
+                    </option>
+
+                    <option value="Kawasaki">Kawasaki </option>
+
+                    <option value="Kawasaki">Kawasaki</option>
+                   
+
+                </select>
+                
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">

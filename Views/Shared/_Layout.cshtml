@@ -4,31 +4,48 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - МотоДрайв</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">МотоДрайв</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+        <nav>
+            <ul class="navbar">
+                <div class="nav-left">
+                <li><a asp-action="Index" asp-controller="Home" onclick="location.reload()"> Начало</a></li>
+                @{
+                    if(User.IsInRole("Admin"))
+                    {
+                        <li><a asp-action="Index" asp-controller="Brands">Марки</a></li>
+                        <li><a asp-action="Index" asp-controller="Models">Модели</a></li>
+                    }
+                }
+                <li><a asp-action="Models" asp-controller="Motorcycles">Марка и модели</a></li>
+                
+
+
+                <div class="dropdown">
+                <li>
+                    <a asp-action="Index" asp-controller="Motorcycles">Мотоциклети <button class="dropdown-btn">▼</button></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="">Нови мотоциклети</a></li>
+                        <li class="dropdown-item"><a href="">Употребявани мотоциклети</a></li>
                     </ul>
-                    <partial name="_LoginPartial" />
+                </li>
                 </div>
-            </div>
+                </div>
+
+                <div class="nav-logo">
+                <li id="logo"><a asp-action="Index" asp-controller="Home" onclick="location.reload()"><img src="~/Images/de8bae12-7b90-46d1-89f6-9ff806d2dca3.png" alt="" /></a></li>
+                </div>
+                <div class="nav-right">
+                <li><a href="">Контакти и сервиз</a></li>
+                </div>
+                <div class="right-corner">
+                <li><a >Регистрация</a></li>
+                <li><a href="">Вход</a></li>
+                </div>
+            </ul>
         </nav>
     </header>
     <div class="container">
@@ -37,10 +54,34 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - ASPMotoDrive - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>МотоДрайв</h3>
+                <p>Вашият доверен партньор в света на мотоциклетите.</p>
+            </div>
+
+            <div class="footer-section links">
+                <h4>Бързи връзки</h4>
+                <ul>
+                    <li><a href="#">Начало</a></li>
+                    <li><a href="#">Модели</a></li>
+                    <li><a href="#">Контакти</a></li>
+                    <li><a href="#">Услуги</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact">
+                <h4>Свържете се с нас</h4>
+                <p>Телефон: +359 888 123 456</p>
+                <p>E-mail: motodrive@outlook.com</p>
+
+            </div>
+
+            <section class="copyright">
+                <p>&copy; 2025 МотоДрайв. Всички права запазени.</p>
+            </section>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

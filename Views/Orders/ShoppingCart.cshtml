@@ -1,0 +1,39 @@
+﻿@model ASPMotoDrive.Models.Motorcycle
+@{
+    ViewData["Title"] = "ShoppingCart";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пазарска кошница</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="cart-container">
+        <h1>Пазарска кошница</h1>
+
+        <div class="cart-items">
+           
+            <div class="cart-item">
+                <img src="@Model.ImageURL" alt="Мотоциклет">
+                <div class="item-details">
+                    <h2>KTM 250 SX</h2>
+                    <p>Година: 2021</p>
+                    <p>Цена: 8 500 лв</p>
+                    <button class="remove-btn">Премахни</button>
+                </div>
+            </div>
+
+           
+        
+
+        <div class="cart-summary">
+            <h3>Общо: 22 700 лв</h3>
+            <button class="checkout-btn">Поръчай</button>
+        </div>
+    </div>
+
+</body>
+</html>
