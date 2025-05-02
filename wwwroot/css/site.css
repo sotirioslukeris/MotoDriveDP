@@ -4,22 +4,22 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto',sans-serif;
-    color: #fff;
-    height:100%;
-}
-.products
-{
-    display:flex;
-    justify-content:flex-start;
-    height:300px;
-    gap:10%;
+    color: teal;
+    height: 100%;
 }
 
-.pb-3
-{
-    margin:0;
-    padding:0;
+.products {
+    display: flex;
+    justify-content: flex-start;
+    height: 300px;
+    gap: 10%;
 }
+
+.pb-3 {
+    margin: 0;
+    padding: 0;
+}
+
 .navbar {
     list-style: none;
     display: flex;
@@ -88,7 +88,6 @@ body {
 }
 
 .card {
-
     background-color: #263238;
     border-radius: 16px;
     padding: 20px;
@@ -105,7 +104,7 @@ body {
     color: white;
 }
 
- 
+
 
     .card h3 {
         margin: 0;
@@ -133,19 +132,19 @@ body {
     margin-top: 10px;
 }
 
-.motorcycle
-{
-    display:flex;
+.motorcycle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width:300px;
     gap:15px;
-    flex-direction:column;
-    align-items:center;
-
+    padding:30px;
 }
 
-.motorcycle p
-{
-    margin:0px;
-}
+    .motorcycle p {
+        margin: 0px;
+    }
 
 
 .navbar-container {
@@ -216,14 +215,24 @@ body {
     background: transparent;
 }
 
-    .dropdown-menu li {
-        padding: 10px 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
 
-        .dropdown-menu li:last-child {
-            border-bottom: none;
-        }
+.dropdown li a {
+    display: flex;
+    flex-direction: row;
+}
+
+.dropdown-btn:hover {
+    cursor: pointer;
+}
+
+.dropdown-menu li {
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
 
 .dropdown-item a {
     display: block;
@@ -235,6 +244,7 @@ body {
     border-radius: 4px;
     margin: 4px;
 }
+
 
 #heading {
     display: flex;
@@ -250,16 +260,19 @@ body {
 .card-container {
     display: flex;
     flex-direction: row;
+    gap:20%;
 }
 
 .mission.card {
     margin-left: 5%;
+    margin-right:0%;
     margin-top: 6%;
     max-width: 500px;
 }
 
 .team.card {
     margin-right: 5%;
+    margin-left:0;
     margin-top: 6%;
     max-width: 500px;
 }
@@ -268,7 +281,6 @@ body {
     background-color: #2c3e50;
     border-radius: 20px;
     line-height: 1.8;
-    
 }
 
 
@@ -288,9 +300,8 @@ footer {
     color: #fff;
     padding: 30px 0 10px;
     font-family: 'Roboto', sans-serif;
-    margin-top: 20%;
-    position: relative;
-    bottom:0;
+    margin-top: 10%;
+    bottom: 0;
 }
 
 .footer-content {
@@ -342,22 +353,31 @@ footer {
     color: #aaa;
 }
 
-.product-container{
-    display:flex;
-    flex-direction:row;
-    gap:30px;
+#product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
-.models h1{
-    border-bottom:1px solid white;
-    margin-bottom:5%;
-    margin-top:2px;
 
+.product-container {
+    display: flex;
+    flex-wrap:wrap;
+    width:100%;
+    gap: 30px;
+    justify-content:center;
+}
+
+.models h1 {
+    border-bottom: 1px solid white;
+    padding-bottom: 30px;
+    margin-top: 2px;
 }
 
 .button-link {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px;
+    object-fit:cover;
     background-color: #ffffff;
     color: #0a0a0a;
     border: none;
@@ -369,20 +389,29 @@ footer {
 }
 
     .button-link:hover {
-       cursor:pointer;
+        cursor: pointer;
     }
 
-.main
-{
-    margin:0;
-    padding:0px;
-}
-.filter-section {
-    margin-left:2px;
-    padding:25px 30px;
-    margin-top:5px;
-    width: 120px;
 
+#articles {
+    text-align: start;
+    padding: 30px 10px;
+}
+
+#no-articles {
+    text-align: center;
+}
+
+.main {
+    margin: 0;
+    padding: 0px;
+}
+
+.filter-section {
+    margin-left: 2px;
+    padding: 25px 30px;
+    margin-top: 5px;
+    width: 120px;
     background-color: rgba(255, 255, 255, 0.08);
     border-radius: 20px;
     color: #fff;
@@ -407,7 +436,6 @@ footer {
     display: flex;
     flex-direction: column;
     text-align: left;
-    
 }
 
     .form-group label {
@@ -444,13 +472,11 @@ footer {
         transform: translateY(-1px);
     }
 
-    .models
-    {
-        border-bottom:1px solid white;
-        text-align:center;
-    }
+.models {
+    text-align: center;
+}
 
-    .details-container {
+.details-container {
     padding: 40px;
     background-color: #1e293b;
     color: white;
@@ -462,12 +488,14 @@ footer {
     display: flex;
     gap: 30px;
     background-color: #263238;
-    padding: 30px;
+    text-align:center;
+    padding:30px;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     max-width: 1000px;
     width: 100%;
 }
+
 
 .image-section img {
     width: 350px;
@@ -481,16 +509,16 @@ footer {
     flex-grow: 1;
 }
 
-.info-section h1 {
-    margin-top: 0;
-    font-size: 28px;
-    color: #38bdf8;
-}
+    .info-section h1 {
+        margin-top: 0;
+        font-size: 28px;
+        color: #38bdf8;
+    }
 
-.info-section p {
-    font-size: 18px;
-    margin: 10px 0;
-}
+    .info-section p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
 
 .back-button {
     display: inline-block;
@@ -504,9 +532,9 @@ footer {
     transition: background 0.3s ease;
 }
 
-.back-button:hover {
-    background-color: #0ea5e9;
-}
+    .back-button:hover {
+        background-color: #0ea5e9;
+    }
 
 
 .cart-container {
@@ -514,7 +542,7 @@ footer {
     margin: 40px auto;
     padding: 20px;
     background-color: #fff;
-    color:teal;
+    color: teal;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -571,3 +599,147 @@ h1, h2, h3 {
     .checkout-btn:hover {
         background-color: #27ae60;
     }
+
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover
+{
+    text-decoration:underline;
+}
+
+
+    a:hover {
+        
+        cursor: pointer;
+    }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #006D70;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .table thead {
+        background-color: #004D4F;
+    }
+
+    .table th, .table td {
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid #005E60;
+    }
+
+    .table th {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #ffcc00;
+    }
+
+    .table td img {
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        max-width: 100%;
+        height: auto;
+    }
+
+    .table td:last-child {
+        white-space: nowrap;
+    }
+
+    .table td a {
+        color: #00e0ff;
+        margin: 0 5px;
+    }
+
+        .table td a:hover {
+            color: #ffffff;
+        }
+
+td:nth-child(10) {
+    max-width: 400px;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.contacts-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+contactst-container h1, contacts-container h2 {
+    color: #007B7F;
+}
+
+.info, contacts-container .form {
+    margin-bottom: 30px;
+}
+
+    .info p {
+        margin: 8px 0;
+    }
+
+.registration-container {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 50px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.registration-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.registration-form .form-floating {
+    margin-bottom: 15px;
+}
+
+.registration-input {
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.registration-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+    .registration-button:hover {
+        background-color: #0056b3;
+    }
+
+.registration-error {
+    color: #dc3545;
+    font-size: 14px;
+}

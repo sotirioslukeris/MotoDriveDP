@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    
+    <title></title>
+</head>
+<body>
+    <div class="contacts-container">
+        <h1>Контакти</h1>
+        <div class="info">
+            <p><strong>Адрес:</strong> ул. „Мотоциклетна“ №23, София 1000</p>
+            <p><strong>Телефон:</strong> +359 88 123 4567</p>
+            <p><strong>Имейл:</strong> office@motoshop.bg</p>
+            <p><strong>Работно време:</strong> Понеделник – Събота: 09:00 – 18:00</p>
+        </div>
+
+        <h2>Сервиз</h2>
+        <div class="info">
+            <p>Нашият оторизиран сервиз предлага пълна диагностика, поддръжка и ремонт на всички видове мотоциклети. Работим с оригинални части и квалифицирани механици с дългогодишен опит.</p>
+            <p><strong>Сервизен телефон:</strong> +359 89 456 7890</p>
+            <p><strong>Онлайн записване:</strong> Попълнете формата по-долу и ще се свържем с вас!</p>
+        </div>
+
+        <h2>Форма за контакт</h2>
+        <div class="form">
+            <form action="/Contact/Send" method="post">
+                <label>Име:</label>
+                <input type="text" name="name" required>
+
+                <label>Имейл:</label>
+                <input type="email" name="email" required>
+
+                <label>Съобщение:</label>
+                <textarea name="message" rows="5" required></textarea>
+
+                <button type="submit">Изпрати</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

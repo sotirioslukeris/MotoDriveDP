@@ -81,6 +81,36 @@ namespace ASPMotoDrive.Controllers
 
 
 
+        public IActionResult NewMotorcycles()
+        {
+            var motorcycles = _context.Motorcycles.Include(x => x.Models).
+                Include(x => x.Models.Brands).Where(x => x.TypeUsage.Equals("Нов")).ToList();
+
+            if (motorcycles == null)
+            {
+                return NotFound();
+            }
+
+            return View(motorcycles);
+        }
+
+        public IActionResult UsedMotorcycles()
+        {
+            var motorcycles = _context.Motorcycles.Include(x => x.Models).
+               Include(x => x.Models.Brands).Where(x => x.TypeUsage.Equals("Употребяван"))
+               .ToList();
+
+            if (motorcycles == null)
+            {
+                return NotFound();
+            }
+
+            return View(motorcycles);
+        }
+
+
+
+
         // GET: Motorcycles/Edit/5
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
@@ -103,8 +133,8 @@ namespace ASPMotoDrive.Controllers
             return View(motorcycle);
         }
         //GET/Models
-       
-        public IActionResult Models(double? price, string? brand, int? year, Enum? condition)
+
+        public IActionResult Models(double? price, string? brand, int? year)
         {
             var motorcycles = _context.Motorcycles.Include(m => m.Models)
                .Include(m => m.Models.Brands).ToList();

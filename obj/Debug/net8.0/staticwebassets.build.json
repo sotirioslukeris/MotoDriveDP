@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "plb0SdDlTYvi9oVLUgNihlqIDUcza770OXKTt2SMjL8=",
+  "Hash": "d9LnYt0bpI0/EJdO8N/v48fp/bT9zETjENJ0eg6TmhI=",
   "Source": "ASPMotoDrive",
   "BasePath": "_content/ASPMotoDrive",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\HTML\\contacts.html",
+      "SourceId": "ASPMotoDrive",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\",
+      "BasePath": "_content/ASPMotoDrive",
+      "RelativePath": "HTML/contacts.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\HTML\\contacts.html"
     },
     {
       "Identity": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\HTML\\index.html",

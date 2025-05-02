@@ -70,6 +70,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/banan/source/repos/ASPMotoDrive/Views/Home/BootstrapTest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCb290c3RyYXBUZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/banan/source/repos/ASPMotoDrive/Views/Home/Contacts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/banan/source/repos/ASPMotoDrive/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -120,6 +128,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/banan/source/repos/ASPMotoDrive/Views/Motorcycles/Models.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3JjeWNsZXNcTW9kZWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/banan/source/repos/ASPMotoDrive/Views/Motorcycles/NewMotorcycles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3JjeWNsZXNcTmV3TW90b3JjeWNsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/banan/source/repos/ASPMotoDrive/Views/Motorcycles/UsedMotorcycles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW90b3JjeWNsZXNcVXNlZE1vdG9yY3ljbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/banan/source/repos/ASPMotoDrive/Views/Orders/Create.cshtml]

@@ -4,15 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - МотоДрайв</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script src="~/js/site.js"></script>
     
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="nav-fill">
             <ul class="navbar">
                 <div class="nav-left">
                 <li><a asp-action="Index" asp-controller="Home" onclick="location.reload()"> Начало</a></li>
+               
                 @{
                     if(User.IsInRole("Admin"))
                     {
@@ -26,9 +29,9 @@
 
                 <div class="dropdown">
                 <li>
-                    <a asp-action="Index" asp-controller="Motorcycles">Мотоциклети <button class="dropdown-btn">▼</button></a>
+                    <a asp-action="Index" asp-controller="Motorcycles">Мотоциклети <a class="dropdown-btn">▼</a></a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-item"><a href="">Нови мотоциклети</a></li>
+                        <li class="dropdown-item"><a asp-action="NewMotorcycles" asp-controller="Motorcycles">Нови мотоциклети</a></li>
                         <li class="dropdown-item"><a href="">Употребявани мотоциклети</a></li>
                     </ul>
                 </li>
@@ -39,24 +42,24 @@
                 <li id="logo"><a asp-action="Index" asp-controller="Home" onclick="location.reload()"><img src="~/Images/de8bae12-7b90-46d1-89f6-9ff806d2dca3.png" alt="" /></a></li>
                 </div>
                 <div class="nav-right">
-                <li><a href="">Контакти и сервиз</a></li>
+                <li><a asp-action="Contacts" asp-controller="Home">Контакти и сервиз</a></li>
                 </div>
                 <div class="right-corner">
-                <li><a >Регистрация</a></li>
-                <li><a href="">Вход</a></li>
+                <li><a asp-area="Identity"asp-page="/Account/Register">Регистрация</a></li>
+                <li><a asp-area="Identity" asp-page="/Account/Login">Вход</a></li>
                 </div>
             </ul>
         </nav>
     </header>
-    <div class="container">
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <
+    
     <footer>
-        <div class="footer-content">
+        <div class="footer-content foo">
             <div class="footer-section about">
                 <h3>МотоДрайв</h3>
                 <p>Вашият доверен партньор в света на мотоциклетите.</p>
@@ -65,9 +68,9 @@
             <div class="footer-section links">
                 <h4>Бързи връзки</h4>
                 <ul>
-                    <li><a href="#">Начало</a></li>
-                    <li><a href="#">Модели</a></li>
-                    <li><a href="#">Контакти</a></li>
+                    <li><a asp-action="Index" asp-controller="Home">Начало</a></li>
+                    <li><a asp-action="Models" asp-controller="Motorcycles">Марка и Модели</a></li>
+                    <li><a href="~/HTML/contacts.html">Контакти</a></li>
                     <li><a href="#">Услуги</a></li>
                 </ul>
             </div>

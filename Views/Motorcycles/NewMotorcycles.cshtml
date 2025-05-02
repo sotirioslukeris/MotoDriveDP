@@ -1,16 +1,12 @@
-﻿  
+﻿@model List<ASPMotoDrive.Models.Motorcycle>
 @{
-    ViewData["Title"] = "Models";
+    ViewData["Title"] = "NewMotorcycles";
 }
 
-<head>
-    <link rel="stylesheet" href="~/css/site.css">
-    <script src="JS/site.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
-    <title>МотоДрайв - света на мотоциклетите!</title>
-</head>
+
+
 <body>
-    
+
     <div class="product-container">
 
         <section class="filter-section">
@@ -61,34 +57,29 @@
             <h1>Мотоциклети</h1>
 
             <div>
-            @{
-                if (Model.Count == 0)
-                {
-                    <h2 id="no-articles">Не бяха намерени артикули</h2>
+                @{
+                    if (Model.Count == 0)
+                    {
+                        <h2 id="no-articles">Не бяха намерени артикули</h2>
+                    }
+                    else
+                    {
+                        <h2 id="articles">Брой намерени мотоциклети(@Model.Count)</h2>
+                    }
                 }
-                else
-                {
-                    <h2 id="articles">Брой намерени мотоциклети(@Model.Count)</h2>
-                }
-            }
             </div>
             <section class="products">
 
-              
+
                 @{
                     foreach (var moto in Model)
                     {
                         <div class="motorcycle card">
-                            <p>@moto?.Models?.Brands?.Name @moto?.Models?.Name </p>
-                            <p>Състояние: @moto?.TypeUsage</p>
-
-                            @if (moto?.TypeUsage.Equals(TypeUsage.Употребяван))
-                            {
-                                <p>Пробег: @moto?.Mileage км</p>
-                            }
-                            
-                            <p>Цена : @moto?.Price лв. </p>
-                            <img id="product-image"  src="@moto?.ImageURL"/>
+                            <p>@moto?.Models?.Brands?.Name </p>
+                            <p>@moto?.Models?.Name</p>
+                            <p>@moto?.TypeUsage?</p>
+                            <p>@moto?.Price</p>
+                            <img id="product-image" width="200" height="133" src="@moto?.ImageURL" />
                             <p>Година : @moto?.Models?.YearOfManuf </p>
                             <a class="button-link" asp-action="Details" asp-controller="Motorcycles" asp-route-id="@moto?.Id" class="more-info">Повече информация</a>
                         </div>
@@ -96,8 +87,11 @@
 
                 }
 
-               
+
             </section>
         </div>
     </div>
-</body>
+   </body>
+    
+
+    
