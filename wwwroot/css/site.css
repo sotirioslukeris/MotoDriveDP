@@ -42,10 +42,15 @@ body {
 
 .filter-section {
     background-color: #007272;
-    padding: 20px;
     border-radius: 16px;
-    width: 250px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    width: 250px;
+    padding:25px 30px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    color: #fff;
+    text-align: start;
+   
 }
 
 .filter-form .form-group {
@@ -249,6 +254,7 @@ body {
 #heading {
     display: flex;
     justify-content: center;
+    color:#fff;
     margin-top: 20px;
     font-family: 'Bebas Neue', sans-serif;
 }
@@ -283,6 +289,15 @@ body {
     line-height: 1.8;
 }
 
+.social-media img
+{
+    width:100px;
+    height:auto;
+}
+.social-media p
+{
+    font-family:'Comic Sans MS';
+}
 
 
 .image-placeholder {
@@ -300,19 +315,9 @@ footer {
     color: #fff;
     padding: 30px 0 10px;
     font-family: 'Roboto', sans-serif;
-    margin-top: 10%;
     bottom: 0;
 }
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin-top: auto;
-}
-
-.footer-section {
+.footer-section{
     flex: 1;
     padding: 10px 20px;
     min-width: 200px;
@@ -407,17 +412,7 @@ footer {
     padding: 0px;
 }
 
-.filter-section {
-    margin-left: 2px;
-    padding: 25px 30px;
-    margin-top: 5px;
-    width: 120px;
-    background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    color: #fff;
-    text-align: start;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
+
 
     .filter-section h2 {
         margin-bottom: 20px;

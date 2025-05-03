@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <script src="~/js/site.js"></script>
-    
+
 </head>
 <body>
     <header>
@@ -15,16 +15,16 @@
             <ul class="navbar">
                 <div class="nav-left">
                 <li><a asp-action="Index" asp-controller="Home" onclick="location.reload()"> Начало</a></li>
-               
-                @{
-                    if(User.IsInRole("Admin"))
-                    {
+
+                    @{
+                        if (User.IsInRole("Admin"))
+                        {
                         <li><a asp-action="Index" asp-controller="Brands">Марки</a></li>
                         <li><a asp-action="Index" asp-controller="Models">Модели</a></li>
+                        }
                     }
-                }
                 <li><a asp-action="Models" asp-controller="Motorcycles">Марка и модели</a></li>
-                
+
 
 
                 <div class="dropdown">
@@ -45,27 +45,27 @@
                 <li><a asp-action="Contacts" asp-controller="Home">Контакти и сервиз</a></li>
                 </div>
                 <div class="right-corner">
-                <li><a asp-area="Identity"asp-page="/Account/Register">Регистрация</a></li>
+                <li><a asp-area="Identity" asp-page="/Account/Register">Регистрация</a></li>
                 <li><a asp-area="Identity" asp-page="/Account/Login">Вход</a></li>
                 </div>
             </ul>
         </nav>
     </header>
-    <div class="container-fluid">
+    <div class="container-fluid p-0 m-0">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    
-    <footer>
-        <div class="footer-content foo">
-            <div class="footer-section about">
+
+    <footer class="pt-3 mt-5">
+        <div class="footer-content row">
+            <div class="footer-section about col">
                 <h3>МотоДрайв</h3>
                 <p>Вашият доверен партньор в света на мотоциклетите.</p>
             </div>
 
-            <div class="footer-section links">
+            <div class="footer-section links col">
                 <h4>Бързи връзки</h4>
                 <ul>
                     <li><a asp-action="Index" asp-controller="Home">Начало</a></li>
@@ -75,16 +75,35 @@
                 </ul>
             </div>
 
-            <div class="footer-section contact">
+
+            <div class="footer-section contact col">
                 <h4>Свържете се с нас</h4>
                 <p>Телефон: +359 888 123 456</p>
                 <p>E-mail: motodrive@outlook.com</p>
 
             </div>
 
-            <section class="copyright">
-                <p>&copy; 2025 МотоДрайв. Всички права запазени.</p>
-            </section>
+           
+            <div class="footer-section social-media col-3">
+                <h3>Социални мрежи</h3>
+                <div class="row">
+                   <img src="~/Images/fcb.png" alt="Alternate Text" />
+                    <p class="col mt-3">MotoDrive_bg</p>
+                </div>
+                <div class="row">
+                    <img src="~/Images/insta.png" alt="Alternate Text" />
+                    <p class="col mt-3">MotoDrive_bg</p>
+                </div>
+                <div class="row">
+                    <img src="~/Images/twitter.png" alt="Alternate Text" />
+                    <p class="col mt-3">MotoDrive_bg</p>
+                </div>
+            </div>
+        </div>
+        
+        <section class="copyright">
+            <p>&copy; 2025 МотоДрайв. Всички права запазени.</p>
+        </section>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
