@@ -25,6 +25,18 @@
       "PackagePath": "staticwebassets\\Images\\de8bae12-7b90-46d1-89f6-9ff806d2dca3.png"
     },
     {
+      "Id": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\Images\\fcb.png",
+      "PackagePath": "staticwebassets\\Images\\fcb.png"
+    },
+    {
+      "Id": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\Images\\insta.png",
+      "PackagePath": "staticwebassets\\Images\\insta.png"
+    },
+    {
+      "Id": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\Images\\twitter.png",
+      "PackagePath": "staticwebassets\\Images\\twitter.png"
+    },
+    {
       "Id": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

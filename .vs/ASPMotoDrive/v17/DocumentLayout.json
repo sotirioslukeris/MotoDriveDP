@@ -3,28 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\motorcycles\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\motorcycles\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\orders\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\orders\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\home\\contactresponse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\home\\contactresponse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\orders\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\orders\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\models\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\models\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\motorcycles\\models.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\motorcycles\\models.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\motorcycles\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\motorcycles\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -33,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\motorcycles\\newmotorcycles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -51,24 +67,12 @@
       "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\motorcycles\\usedmotorcycles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\motorcycles\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\motorcycles\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\home\\contacts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\home\\contacts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -110,17 +114,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
               "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\css\\site.css",
               "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAABABAAAAAAAAAAAswCoBAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAswIsAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-04-22T18:01:37.317Z",
               "IsPinned": true,
@@ -128,19 +132,82 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\Details.cshtml",
-              "RelativeDocumentMoniker": "Views\\Motorcycles\\Details.cshtml",
-              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\Details.cshtml",
-              "RelativeToolTip": "Views\\Motorcycles\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-28T08:44:49.166Z"
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T14:47:44.499Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T18:10:06.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ContactResponse.cshtml",
+              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Home\\ContactResponse.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\ContactResponse.cshtml",
+              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Home\\ContactResponse.cshtml",
+              "RelativeToolTip": "Views\\Home\\ContactResponse.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-05T13:46:44.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-27T10:09:04.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-23T15:13:04.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACQAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T18:23:48.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ShoppingCart.cshtml",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Orders\\ShoppingCart.cshtml",
               "RelativeDocumentMoniker": "Views\\Orders\\ShoppingCart.cshtml",
@@ -152,43 +219,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Models\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Models\\Create.cshtml",
+              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Models\\Create.cshtml",
+              "RelativeToolTip": "Views\\Models\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T18:23:48.656Z"
+              "WhenOpened": "2025-05-04T06:53:03.402Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAAAGEAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T18:10:06.55Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Models.cshtml",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\Models.cshtml",
               "RelativeDocumentMoniker": "Views\\Motorcycles\\Models.cshtml",
               "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\Models.cshtml",
               "RelativeToolTip": "Views\\Motorcycles\\Models.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEkAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-22T18:11:28.33Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 10,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Motorcycles\\Details.cshtml",
+              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\Details.cshtml",
+              "RelativeToolTip": "Views\\Motorcycles\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-28T08:44:49.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "BootstrapTest.cshtml",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Home\\BootstrapTest.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\BootstrapTest.cshtml",
@@ -200,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "bootstrap.min.css",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
               "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
@@ -212,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Orders\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Orders\\Index.cshtml",
@@ -224,19 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAuwCUAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T14:47:44.499Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Motorcycle.cs",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Models\\Motorcycle.cs",
               "RelativeDocumentMoniker": "Models\\Motorcycle.cs",
@@ -248,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "NewMotorcycles.cshtml",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\NewMotorcycles.cshtml",
               "RelativeDocumentMoniker": "Views\\Motorcycles\\NewMotorcycles.cshtml",
@@ -260,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "MotorcyclesController.cs",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Controllers\\MotorcyclesController.cs",
               "RelativeDocumentMoniker": "Controllers\\MotorcyclesController.cs",
@@ -268,11 +323,12 @@
               "RelativeToolTip": "Controllers\\MotorcyclesController.cs",
               "ViewState": "AgIAAH8AAAAAAAAAAAAuwJMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T13:06:38.093Z"
+              "WhenOpened": "2025-04-21T13:06:38.093Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "UsedMotorcycles.cshtml",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\UsedMotorcycles.cshtml",
               "RelativeDocumentMoniker": "Views\\Motorcycles\\UsedMotorcycles.cshtml",
@@ -284,19 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "site.js",
-              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
-              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "wwwroot\\js\\site.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAA+wCQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-27T10:09:04.339Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Motorcycles\\Create.cshtml",
@@ -308,31 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAIBJwDsAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-23T15:13:04.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Contacts.cshtml",
-              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Home\\Contacts.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Contacts.cshtml",
-              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Home\\Contacts.cshtml",
-              "RelativeToolTip": "Views\\Home\\Contacts.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAIBJwBEAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-23T14:39:04.163Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
@@ -344,7 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Controllers\\OrdersController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
@@ -352,11 +372,12 @@
               "RelativeToolTip": "Controllers\\OrdersController.cs",
               "ViewState": "AgIAAIoAAAAAAAAAAAAjwFgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T13:09:21.044Z"
+              "WhenOpened": "2025-04-21T13:09:21.044Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
@@ -368,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "contacts.html",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\HTML\\contacts.html",
               "RelativeDocumentMoniker": "wwwroot\\HTML\\contacts.html",
@@ -380,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\HTML\\index.html",
               "RelativeDocumentMoniker": "wwwroot\\HTML\\index.html",
@@ -392,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "models.html",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\HTML\\models.html",
               "RelativeDocumentMoniker": "wwwroot\\HTML\\models.html",
@@ -404,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "ModelsController.cs",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Controllers\\ModelsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ModelsController.cs",
@@ -412,7 +433,8 @@
               "RelativeToolTip": "Controllers\\ModelsController.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAQwA4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T13:09:04.425Z"
+              "WhenOpened": "2025-04-21T13:09:04.425Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -27,16 +27,20 @@
 
 
 
-                <div class="dropdown">
+                <div class="dropdown"></
                 <li>
-                    <a asp-action="Index" asp-controller="Motorcycles">Мотоциклети <a class="dropdown-btn">▼</a></a>
+                    <div class="row">
+                        <a class="col" asp-action="Index" asp-controller="Motorcycles">Мотоциклети</a>
+                        <a id="dropdown-btn" class="col">▼</a>
+                    </div>
                     <ul class="dropdown-menu">
                         <li class="dropdown-item"><a asp-action="NewMotorcycles" asp-controller="Motorcycles">Нови мотоциклети</a></li>
                         <li class="dropdown-item"><a href="">Употребявани мотоциклети</a></li>
                     </ul>
+
                 </li>
                 </div>
-                </div>
+
 
                 <div class="nav-logo">
                 <li id="logo"><a asp-action="Index" asp-controller="Home" onclick="location.reload()"><img src="~/Images/de8bae12-7b90-46d1-89f6-9ff806d2dca3.png" alt="" /></a></li>
@@ -83,11 +87,11 @@
 
             </div>
 
-           
+
             <div class="footer-section social-media col-3">
                 <h3>Социални мрежи</h3>
                 <div class="row">
-                   <img src="~/Images/fcb.png" alt="Alternate Text" />
+                    <img src="~/Images/fcb.png" alt="Alternate Text" />
                     <p class="col mt-3">MotoDrive_bg</p>
                 </div>
                 <div class="row">
@@ -100,7 +104,7 @@
                 </div>
             </div>
         </div>
-        
+
         <section class="copyright">
             <p>&copy; 2025 МотоДрайв. Всички права запазени.</p>
         </section>

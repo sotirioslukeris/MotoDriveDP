@@ -23,6 +23,10 @@ namespace ASPMotoDrive.Controllers
             return View();
         }
 
+        public IActionResult ContactResponse()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
