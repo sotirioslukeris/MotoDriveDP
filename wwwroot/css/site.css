@@ -1,4 +1,4 @@
-/* Base navbar styles */
+
 body {
     background-color: teal;
     margin: 0;
@@ -21,7 +21,7 @@ body {
     padding: 0;
 }
 
-.navbar {
+.nav-content {
     list-style: none;
     display: flex;
     gap: 30px;
@@ -164,7 +164,8 @@ body {
 .right-corner {
     display: flex;
     align-items: center;
-    margin-left: auto;
+    margin-left:auto;
+    justify-content:end;
     gap: 10px;
 }
 
@@ -319,7 +320,7 @@ footer {
     color: #fff;
     padding: 30px 0 10px;
     font-family: 'Roboto', sans-serif;
-    bottom: 0;
+    margin-bottom: 0;
 }
 
 .footer-section {
@@ -685,6 +686,15 @@ td:nth-child(10) {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+.contacts-container h2
+{
+    color:#005f60;
+}
+.contacts-container p {
+    color: #005f60;
+    
+}
+
 h1, h2 {
     color: #FFF;
     margin-bottom: 20px;
@@ -702,7 +712,6 @@ h1, h2 {
 
 strong {
     display: inline-block;
-    width: 180px;
     color: #005f60;
 }
 
@@ -758,6 +767,14 @@ strong {
     max-width: 500px;
 }
 
+.registration-input::placeholder {
+    color: blue; 
+    opacity:1;
+}
+.registration-container form placeholder
+{
+    color:blue
+}
 .registration-header {
     font-size: 24px;
     font-weight: bold;

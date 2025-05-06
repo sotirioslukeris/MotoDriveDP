@@ -9,10 +9,10 @@
     <script src="~/js/site.js"></script>
 
 </head>
-<body>
+<body class="d-flex flex-column">
     <header>
-        <nav class="nav-fill">
-            <ul class="navbar">
+        <nav class="navbar navbar-expand-lg p-0 m-0">
+            <ul class="nav-content container-fluid">
                 <div class="nav-left">
                 <li><a asp-action="Index" asp-controller="Home" onclick="location.reload()"> Начало</a></li>
 
@@ -27,7 +27,7 @@
 
 
 
-                <div class="dropdown"></
+                <div class="dropdown">
                 <li>
                     <div class="row">
                         <a class="col" asp-action="Index" asp-controller="Motorcycles">Мотоциклети</a>
@@ -48,6 +48,7 @@
                 <div class="nav-right">
                 <li><a asp-action="Contacts" asp-controller="Home">Контакти и сервиз</a></li>
                 </div>
+
                 <div class="right-corner">
                 <li><a asp-area="Identity" asp-page="/Account/Register">Регистрация</a></li>
                 <li><a asp-area="Identity" asp-page="/Account/Login">Вход</a></li>
@@ -56,7 +57,7 @@
         </nav>
     </header>
     <div class="container-fluid p-0 m-0">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3 flex-fill">
             @RenderBody()
         </main>
     </div>
