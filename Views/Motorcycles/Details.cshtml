@@ -15,10 +15,15 @@
         <div class="info-section">
             <h1>@Model.Models.Brands.Name @Model.Models.Name</h1>
             <p><strong>Година на производство:</strong> @Model.Models.YearOfManuf</p>
-            <p><strong>Цена:</strong> @Model.Price лв</p>
+            <p><strong>Категория:</strong> @Model.Category</p>
             <p><strong>Цвят:</strong> @Model.Colour</p>
+            <p><strong>Нов/Употребяван:</strong> @Model.TypeUsage</p>
+            <p><strong>Пробег:</strong> @Model.Mileage км</p>
             <p><strong>Описание:</strong> @Model.Description</p>
 
+            
+
+            
             <a href="@Url.Action("Models", "Motorcycles")" class="back-button">⬅ Обратно към списъка</a>
             <a asp-action="ShoppingCart" asp-controller="Orders" asp-route-id="@Model.Id" class="back-button"><i class="far fa-shopping-cart"></i> Добави в количката</a>
         </div>

@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - МотоДрайв</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="~/js/site.js"></script>
 
 </head>
@@ -29,11 +30,11 @@
 
                 <div class="dropdown">
                 <li>
-                    <div class="row">
-                        <a class="col" asp-action="Index" asp-controller="Motorcycles">Мотоциклети</a>
+                    <div>
+                        <a asp-action="Index" asp-controller="Motorcycles">Мотоциклети</a>
                         <a id="dropdown-btn" class="col">▼</a>
                     </div>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu col">
                         <li class="dropdown-item"><a asp-action="NewMotorcycles" asp-controller="Motorcycles">Нови мотоциклети</a></li>
                         <li class="dropdown-item"><a href="">Употребявани мотоциклети</a></li>
                     </ul>

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<ASPMotoDrive.Models.Motorcycle>
+@{
     ViewData["Title"] = "Models";
 }
 
@@ -19,25 +20,21 @@
                         <label for="brand">Марка:</label>
                         <select id="brand" action="models.cshtml" name="brand">
                             <option value="all">Всички</option>
+                        @{
 
-                            <option value="Honda">
-                                Honda
-
-                            </option>
-                            <option value="Yamaha">
-                                Yamaha
-
-                            </option>
-                            <option value="BMW">
-                                BMW
-
-                            </option>
-                            <option value="KTM">
-                                KTM
-                            </option>
+                            foreach (var moto in Model
+                            .GroupBy(x => x.Models.Brands.Name)
+                            .Select(g => g.First())
+                            .ToList())
+                            {
+                                
+                                <option value="@moto.Models.Brands.Name">
+                                     @moto.Models.Brands.Name
+                                </option>
+                            }
+                        }
                         </select>
                     </div>
-
 
 
                     <div class="form-group">
@@ -49,8 +46,16 @@
                         <label for="price">Макс. цена(лв):</label>
                         <input type="number" id="price" name="price">
 
-
                     </div>
+
+                <div class="form-group checkboxes">
+                    <label for="typeUsage">Нов</label>
+                    <input type="checkbox" id="typeUsage" name="typeUsage" value="Нов">
+                    <label for="typeUsage">Употребяван</label>
+                    <input type="checkbox" id="typeUsage" name="typeUsage" value="Употребяван">
+
+                </div>
+
 
                     <button type="submit">Филтрирай</button>
                 </form>
@@ -81,7 +86,7 @@
                                     <p>@moto?.Models?.Brands?.Name @moto?.Models?.Name </p>
                                     <p>Състояние: @moto?.TypeUsage</p>
 
-                                    @if (moto?.TypeUsage.Equals(TypeUsage.Употребяван))
+                                    @if (moto.TypeUsage.Equals(TypeUsage.Употребяван))
                                     {
                                         <p>Пробег: @moto?.Mileage км</p>
                                     }

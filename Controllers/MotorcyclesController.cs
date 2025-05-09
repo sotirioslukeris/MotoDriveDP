@@ -134,7 +134,7 @@ namespace ASPMotoDrive.Controllers
         }
         //GET/Models
 
-        public IActionResult Models(double? price, string? brand, int? year)
+        public IActionResult Models(double? price, string? brand, int? year, string? typeUsage)
         {
             var motorcycles = _context.Motorcycles.Include(m => m.Models)
                .Include(m => m.Models.Brands).ToList();
@@ -149,11 +149,25 @@ namespace ASPMotoDrive.Controllers
             {
                 if (brand == "all")
                 {
-                    //Motorcycles does not change
+
                 }
                 else
                 {
                     motorcycles = motorcycles.Where(x => x.Models.Brands.Name == brand).ToList();
+                }
+
+                if (!typeUsage.IsNullOrEmpty())
+                {
+                    if (typeUsage == "Нов")
+                    {
+                        motorcycles = motorcycles.Where(x => x.TypeUsage.Equals(TypeUsage.Нов)).ToList();
+                    }
+                    else
+                    {
+                        motorcycles = motorcycles.Where(x => x.TypeUsage.Equals(TypeUsage.Употребяван)).ToList();
+
+                    }
+
                 }
             }
             if (year.HasValue)
@@ -162,6 +176,8 @@ namespace ASPMotoDrive.Controllers
             }
 
             return View(motorcycles);
+
+
         }
 
 

@@ -1,6 +1,6 @@
 ﻿namespace ASPMotoDrive.Models
 {
    
-        public enum TypeMotor {Мотоциклет=0,Скутер=0}
+        public enum TypeMotor {Мотоциклет,Скутер}
     
 }
