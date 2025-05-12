@@ -81,30 +81,32 @@ namespace ASPMotoDrive.Controllers
 
 
 
-        public IActionResult NewMotorcycles()
+        public IActionResult NewMotorcycles(double? price, string? brand, int? year)
         {
             var motorcycles = _context.Motorcycles.Include(x => x.Models).
-                Include(x => x.Models.Brands).Where(x => x.TypeUsage.Equals("Нов")).ToList();
+               Include(x => x.Models.Brands).Where(x => x.TypeUsage.Equals(TypeUsage.Употребяван)).ToList();
 
             if (motorcycles == null)
             {
                 return NotFound();
             }
+
+           motorcycles = Filters(motorcycles,price, brand, year, null);
 
             return View(motorcycles);
         }
 
-        public IActionResult UsedMotorcycles()
+        public IActionResult UsedMotorcycles(double? price, string? brand, int? year)
         {
             var motorcycles = _context.Motorcycles.Include(x => x.Models).
-               Include(x => x.Models.Brands).Where(x => x.TypeUsage.Equals("Употребяван"))
-               .ToList();
-
+              Include(x => x.Models.Brands).Where(x => x.TypeUsage.Equals(TypeUsage.Употребяван))
+              .ToList();
             if (motorcycles == null)
             {
                 return NotFound();
             }
 
+            motorcycles = Filters(motorcycles,price, brand, year, null);
             return View(motorcycles);
         }
 
@@ -134,10 +136,9 @@ namespace ASPMotoDrive.Controllers
         }
         //GET/Models
 
-        public IActionResult Models(double? price, string? brand, int? year, string? typeUsage)
+        public List<Motorcycle> Filters(List<Motorcycle> motorcycles,double? price, string? brand, int? year, string? typeUsage)
         {
-            var motorcycles = _context.Motorcycles.Include(m => m.Models)
-               .Include(m => m.Models.Brands).ToList();
+           
 
             if (price.HasValue)
             {
@@ -174,6 +175,16 @@ namespace ASPMotoDrive.Controllers
             {
                 motorcycles = motorcycles.Where(x => x.Models.YearOfManuf == year).ToList();
             }
+
+            return motorcycles;
+        }
+
+        public IActionResult Models(double? price, string? brand, int? year, string? typeUsage)
+        {
+            var motorcycles = _context.Motorcycles.Include(m => m.Models)
+             .Include(m => m.Models.Brands).ToList();
+
+            Filters(motorcycles,price,brand,year,typeUsage);
 
             return View(motorcycles);
 

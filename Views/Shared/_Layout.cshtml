@@ -12,51 +12,57 @@
 </head>
 <body class="d-flex flex-column">
     <header>
-        <nav class="navbar navbar-expand-lg p-0 m-0">
-            <ul class="nav-content container-fluid">
-                <div class="nav-left">
-                <li><a asp-action="Index" asp-controller="Home" onclick="location.reload()"> Начало</a></li>
+        <nav>
+            <ul class="nav-content">
+                
+                <li class="nav-left"><a asp-action="Index" asp-controller="Home" onclick="location.reload()">Начало</a></li>
 
-                    @{
-                        if (User.IsInRole("Admin"))
-                        {
-                        <li><a asp-action="Index" asp-controller="Brands">Марки</a></li>
-                        <li><a asp-action="Index" asp-controller="Models">Модели</a></li>
-                        }
+                    @if (User.IsInRole("Admin"))
+                    {
+                    <li class="nav-left"><a asp-action="Index" asp-controller="Brands">Марки</a></li>
+                    <li class="nav-left"><a asp-action="Index" asp-controller="Models">Модели</a></li>
                     }
-                <li><a asp-action="Models" asp-controller="Motorcycles">Марка и модели</a></li>
 
+                <li class="nav-left"><a asp-action="Models" asp-controller="Motorcycles">Марка и модели</a></li>
 
-
-                <div class="dropdown">
-                <li>
-                    <div>
-                        <a asp-action="Index" asp-controller="Motorcycles">Мотоциклети</a>
-                        <a id="dropdown-btn" class="col">▼</a>
-                    </div>
-                    <ul class="dropdown-menu col">
-                        <li class="dropdown-item"><a asp-action="NewMotorcycles" asp-controller="Motorcycles">Нови мотоциклети</a></li>
-                        <li class="dropdown-item"><a href="">Употребявани мотоциклети</a></li>
+                <li class="dropdown">
+                    <a asp-action="Index" asp-controller="Motorcycles">Мотоциклети</a>
+                    <a id="dropdown-btn">▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a asp-action="NewMotorcycles" asp-controller="Motorcycles">Нови мотоциклети</a></li>
+                        <li><a asp-action="UsedMotorcycles" asp-controller="Motorcycles">Употребявани мотоциклети</a></li>
                     </ul>
-
                 </li>
-                </div>
+                
+                <li class="nav-logo">
+                    <a asp-action="Index" asp-controller="Home" onclick="location.reload()">
+                        <img src="~/Images/de8bae12-7b90-46d1-89f6-9ff806d2dca3.png" alt="Logo" />
+                    </a>
+                </li>
+               
+               
+                <li class="nav-right"><a asp-action="Contacts" asp-controller="Home">Контакти и сервиз</a></li>
+               
+                <li class="nav-right right-corner"><a asp-area="Identity" asp-page="/Account/Register">Регистрация</a></li>
+                @{
+                    if (string.IsNullOrEmpty(User.Identity.Name))
+                    {
+                        <li class="nav-right right-corner"><a asp-area="Identity" asp-page="/Account/Login">Вход</a></li>
+                    }
+                    else
+                    {
+                        <li class="nav-right logged-user">Logged as: @User.Identity.Name</li>
+                        
+                        
+                    }
 
+                }
+               
 
-                <div class="nav-logo">
-                <li id="logo"><a asp-action="Index" asp-controller="Home" onclick="location.reload()"><img src="~/Images/de8bae12-7b90-46d1-89f6-9ff806d2dca3.png" alt="" /></a></li>
-                </div>
-                <div class="nav-right">
-                <li><a asp-action="Contacts" asp-controller="Home">Контакти и сервиз</a></li>
-                </div>
-
-                <div class="right-corner">
-                <li><a asp-area="Identity" asp-page="/Account/Register">Регистрация</a></li>
-                <li><a asp-area="Identity" asp-page="/Account/Login">Вход</a></li>
-                </div>
             </ul>
         </nav>
     </header>
+
     <div class="container-fluid p-0 m-0">
         <main role="main" class="pb-3 flex-fill">
             @RenderBody()

@@ -1,22 +1,11 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
-    const dropdownBtn = document.querySelector(".dropdown-btn");
-    const dropdownMenu = document.querySelector(".dropdown-menu");
+    const dropdownBtn = document.getElementById("dropdown-btn");
+    const dropdownMenu = dropdownBtn.nextElementSibling;
 
-    dropdownBtn.addEventListener("click", function (event) {
-        event.stopPropagation();
-        dropdownMenu.style.display =
-            dropdownMenu.style.display === "block" ? "none" : "block";
-        dropdownBtn.classList.toggle("active");
-    });
-
-
-    document.addEventListener("click", function (event) {
-        if (!dropdownMenu.contains(event.target) && !dropdownBtn.contains(event.target)) {
-            dropdownMenu.style.display = "none";
-            dropdownBtn.classList.remove("active");
-        }
+    dropdownBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdownMenu.classList.toggle("show");
     });
 });
 
-let slideIndex = 0;
 

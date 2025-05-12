@@ -23,12 +23,14 @@ body {
 .nav-content {
     list-style: none;
     display: flex;
-    gap: 30px;
+    
     background-color: #2c3e50;
     list-style: none;
     padding: 15px 30px;
     margin: 0;
 }
+
+
 
 .form-group.checkboxes 
 {
@@ -165,33 +167,60 @@ body {
     }
 
 
-.navbar-container {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #222;
-    padding:0;
+
+.nav-content
+{
+    list-style-type:none;
+    display:flex;
+    align-items:center;
+    justify-content:start;
+    padding:15px 30px;
+    gap:5%;
+   
+   
+}
+.nav-right
+{
+   margin-left:5%;
 }
 
-.right-corner {
-    display: flex;
-    align-items: center;
-    
-    padding-right:2%;
-    
-    gap: 10px;
+.nav-logo
+{
+    display:flex;
+    justify-content:center;
 }
 
+.nav-content a
+{
+    color:#fff;
+    font-weight:500;
+    font-size:20px;
+    
+}
+.logged-user
+{
+    font-weight:bold;
+    font-size:18px;
+    
 
+
+}
+
+#dropdown-btn a {
+    margin-left:3%;
+}
+.nav-logo img
+{
+    width:100px;
+}
 .navbar a {
     text-decoration: none;
     color: #f0f0f0;
     font-family: sans-serif;
     font-size: 18px;
     font-weight: 500;
-    padding: 10px 15px;
-    display: block;
+    display: inline-block;
+   padding:20px 15px;
 }
 
 .dropdown li {
@@ -199,17 +228,10 @@ body {
     list-style-type: none;
 }
 
-.nav-left, .nav-right {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
 
-.nav-logo {
-    display: flex;
-    align-items: start;
-}
 
+
+nav-l
 .navbar a:hover {
     text-decoration: underline;
 }
@@ -286,18 +308,18 @@ body {
 .card-container {
     display: flex;
     flex-direction: row;
-    gap: 20%;
+    gap: 15%;
 }
 
 .mission.card {
-    margin-left: 5%;
-    margin-right: 0%;
+    margin-left: 10%;
+    margin-right:2%;
     margin-top: 6%;
     max-width: 500px;
 }
 
 .team.card {
-    margin-right: 5%;
+    margin-right: 0%;
     margin-left: 0;
     margin-top: 6%;
     max-width: 500px;

@@ -11,28 +11,25 @@
 
         <section class="filter-section">
             <h2>Търси мотоциклет</h2>
-            <form asp-action="Models" method="post" asp-controller="Motorcycles" class="filter-form">
+            <form asp-action="NewMotorcycles" method="post" asp-controller="Motorcycles" class="filter-form">
                 <div class="form-group">
                     <label for="brand">Марка:</label>
                     <select id="brand" action="models.cshtml" name="brand">
                         <option value="all">Всички</option>
+                        @{
+                            foreach (var moto in Model
+                            .GroupBy(x => x.Models.Brands.Name)
+                            .Select(g => g.First())
+                            .ToList())
+                            {
 
-                        <option value="Honda">
-                            Honda
-
-                        </option>
-                        <option value="Yamaha">
-                            Yamaha
-
-                        </option>
-                        <option value="BMW">
-                            BMW
-
-                        </option>
-                        <option value="KTM">
-                            KTM
-                        </option>
+                                <option value="@moto.Models.Brands.Name">
+                                    @moto.Models.Brands.Name
+                                </option>
+                            }
+                        }
                     </select>
+
                 </div>
 
 
@@ -53,7 +50,7 @@
             </form>
         </section>
 
-        <div class="models heading ">
+        <div class="models heading col-9 ">
             <h1>Мотоциклети</h1>
 
             <div>
@@ -64,34 +61,43 @@
                     }
                     else
                     {
-                        <h2 id="articles">Брой намерени мотоциклети(@Model.Count)</h2>
+                        <h2 id="articles"> Намерени мотоциклети(@Model.Count)</h2>
                     }
                 }
             </div>
-            <section class="products">
+            <div class="row">
+                <section class="products col d-flex flex-wrap align-content-start ">
 
+                    @{
+                        foreach (var moto in Model)
+                        {
+                            <div class="motorcycle card">
+                                <p>@moto?.Models?.Brands?.Name @moto?.Models?.Name </p>
+                                <p>Състояние: @moto?.TypeUsage</p>
 
-                @{
-                    foreach (var moto in Model)
-                    {
-                        <div class="motorcycle card">
-                            <p>@moto?.Models?.Brands?.Name </p>
-                            <p>@moto?.Models?.Name</p>
-                            <p>@moto?.TypeUsage?</p>
-                            <p>@moto?.Price</p>
-                            <img id="product-image" width="200" height="133" src="@moto?.ImageURL" />
-                            <p>Година : @moto?.Models?.YearOfManuf </p>
-                            <a class="button-link" asp-action="Details" asp-controller="Motorcycles" asp-route-id="@moto?.Id" class="more-info">Повече информация</a>
-                        </div>
+                                @if (moto.TypeUsage.Equals(TypeUsage.Употребяван))
+                                {
+                                    <p>Пробег: @moto?.Mileage км</p>
+                                }
+
+                                <p>Цена : @moto?.Price лв. </p>
+                                <img id="product-image" src="@moto?.ImageURL" />
+                                <p>Година : @moto?.Models?.YearOfManuf </p>
+                                <a class="button-link" asp-action="Details" asp-controller="Motorcycles" asp-route-id="@moto?.Id" class="more-info">Повече информация</a>
+                            </div>
+                        }
+
                     }
 
-                }
+
+                </section>
+            </div>
 
 
-            </section>
+
         </div>
     </div>
-   </body>
-    
+</body>
 
-    
+
+
