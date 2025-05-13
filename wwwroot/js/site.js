@@ -1,11 +1,12 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
-    const dropdownBtn = document.getElementById("dropdown-btn");
-    const dropdownMenu = dropdownBtn.nextElementSibling;
+    document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+        const btn = dropdown.querySelector("#dropdown-btn");
+        const menu = dropdown.querySelector(".dropdown-menu");
 
-    dropdownBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        dropdownMenu.classList.toggle("show");
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            menu.classList.toggle("show");
+        });
     });
 });
-
 

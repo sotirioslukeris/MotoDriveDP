@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\motorcycles\\usedmotorcycles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\motorcycles\\usedmotorcycles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\orders\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\orders\\shoppingcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\motorcycles\\newmotorcycles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -23,8 +15,24 @@
       "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\controllers\\motorcyclescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:controllers\\motorcyclescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|c:\\users\\banan\\source\\repos\\aspmotodrive\\views\\motorcycles\\usedmotorcycles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7A1D6CA7-BB18-40F3-8C3A-5A48301C29D5}|ASPMotoDrive.csproj|solutionrelative:views\\motorcycles\\usedmotorcycles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,37 +42,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "ShoppingCart.cshtml",
+              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Orders\\ShoppingCart.cshtml",
+              "RelativeDocumentMoniker": "Views\\Orders\\ShoppingCart.cshtml",
+              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Orders\\ShoppingCart.cshtml",
+              "RelativeToolTip": "Views\\Orders\\ShoppingCart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-13T17:16:30.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
               "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\js\\site.js",
               "RelativeToolTip": "wwwroot\\js\\site.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-12T18:17:33.606Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T18:17:33.606Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UsedMotorcycles.cshtml",
-              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\UsedMotorcycles.cshtml",
-              "RelativeDocumentMoniker": "Views\\Motorcycles\\UsedMotorcycles.cshtml",
-              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\UsedMotorcycles.cshtml",
-              "RelativeToolTip": "Views\\Motorcycles\\UsedMotorcycles.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAFAAAAClAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-12T18:13:19.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "NewMotorcycles.cshtml",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\NewMotorcycles.cshtml",
               "RelativeDocumentMoniker": "Views\\Motorcycles\\NewMotorcycles.cshtml",
@@ -77,42 +84,66 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
               "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\wwwroot\\css\\site.css",
               "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAswK4AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAwCAAAAAAAAAAAswCICAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-05-12T06:51:01.247Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAADEAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADMAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-12T06:57:31.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "MotorcyclesController.cs",
               "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Controllers\\MotorcyclesController.cs",
               "RelativeDocumentMoniker": "Controllers\\MotorcyclesController.cs",
               "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Controllers\\MotorcyclesController.cs",
               "RelativeToolTip": "Controllers\\MotorcyclesController.cs",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAowFYAAABsAAAAAAAAAA==",
+              "ViewState": "AgIAAM0AAAAAAAAAAAASwL8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T08:00:39.483Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowBoAAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-13T10:14:39.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsedMotorcycles.cshtml",
+              "DocumentMoniker": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\UsedMotorcycles.cshtml",
+              "RelativeDocumentMoniker": "Views\\Motorcycles\\UsedMotorcycles.cshtml",
+              "ToolTip": "C:\\Users\\banan\\source\\repos\\ASPMotoDrive\\Views\\Motorcycles\\UsedMotorcycles.cshtml",
+              "RelativeToolTip": "Views\\Motorcycles\\UsedMotorcycles.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAFAAAAClAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T18:13:19.387Z"
             }
           ]
         }

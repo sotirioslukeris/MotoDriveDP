@@ -27,7 +27,7 @@
 
                 <li class="dropdown">
                     <a asp-action="Index" asp-controller="Motorcycles">Мотоциклети</a>
-                    <a id="dropdown-btn">▼</a>
+                    <button id="dropdown-btn">▼</button>
                     <ul class="dropdown-menu">
                         <li><a asp-action="NewMotorcycles" asp-controller="Motorcycles">Нови мотоциклети</a></li>
                         <li><a asp-action="UsedMotorcycles" asp-controller="Motorcycles">Употребявани мотоциклети</a></li>
@@ -43,15 +43,22 @@
                
                 <li class="nav-right"><a asp-action="Contacts" asp-controller="Home">Контакти и сервиз</a></li>
                
-                <li class="nav-right right-corner"><a asp-area="Identity" asp-page="/Account/Register">Регистрация</a></li>
+               
                 @{
                     if (string.IsNullOrEmpty(User.Identity.Name))
                     {
-                        <li class="nav-right right-corner"><a asp-area="Identity" asp-page="/Account/Login">Вход</a></li>
+                        <span class="right-corner">
+                        <li><a asp-area="Identity" asp-page="/Account/Register">Регистрация</a></li>
+                        <li><a asp-area="Identity" asp-page="/Account/Login">Вход</a></li>
+                        </span>
+
+                        
+                       
+                        
                     }
                     else
                     {
-                        <li class="nav-right logged-user">Logged as: @User.Identity.Name</li>
+                        <li class="nav-right logged-user">Потребител: @User.Identity.Name</li>
                         
                         
                     }

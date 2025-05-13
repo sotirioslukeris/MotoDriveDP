@@ -16,12 +16,13 @@
 
         <div class="cart-items">
            
-            <div class="cart-item">
+            <div class="cart-item" >
                 <img src="@Model.ImageURL" alt="Мотоциклет">
                 <div class="item-details">
-                    <h2>KTM 250 SX</h2>
-                    <p>Година: 2021</p>
-                    <p>Цена: 8 500 лв</p>
+                    <h2>@Model.Models.Brands.Name @Model.Models.Name</h2>
+                    <p>Година: @Model.Models.YearOfManuf</p>
+                    <p>Брой: @Model.Orders.</p>
+                    <p>Цена: @Model.Price</p>
                     <button class="remove-btn">Премахни</button>
                 </div>
             </div>
@@ -30,7 +31,13 @@
         
 
         <div class="cart-summary">
-            <h3>Общо: 22 700 лв</h3>
+                @{
+                    
+                    <h3>
+                         Цена :    
+                    </h3>
+            }
+            
             <button class="checkout-btn">Поръчай</button>
         </div>
     </div>

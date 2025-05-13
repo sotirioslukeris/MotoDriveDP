@@ -184,7 +184,7 @@ namespace ASPMotoDrive.Controllers
             var motorcycles = _context.Motorcycles.Include(m => m.Models)
              .Include(m => m.Models.Brands).ToList();
 
-            Filters(motorcycles,price,brand,year,typeUsage);
+            motorcycles = Filters(motorcycles,price,brand,year,typeUsage);
 
             return View(motorcycles);
 
