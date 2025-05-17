@@ -4,6 +4,7 @@ using ASPMotoDrive.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASPMotoDrive.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250516112439_DropColumns")]
+    partial class DropColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,24 +24,6 @@ namespace ASPMotoDrive.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("ASPMotoDrive.Data.Models.CartItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("MotorcycleId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MotorcycleId");
-
-                    b.ToTable("CartItem");
-                });
 
             modelBuilder.Entity("ASPMotoDrive.Models.Brand", b =>
                 {
@@ -397,17 +382,6 @@ namespace ASPMotoDrive.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ASPMotoDrive.Data.Models.CartItem", b =>
-                {
-                    b.HasOne("ASPMotoDrive.Models.Motorcycle", "Motorcycles")
-                        .WithMany("CartItems")
-                        .HasForeignKey("MotorcycleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Motorcycles");
-                });
-
             modelBuilder.Entity("ASPMotoDrive.Models.Model", b =>
                 {
                     b.HasOne("ASPMotoDrive.Models.Brand", "Brands")
@@ -510,8 +484,6 @@ namespace ASPMotoDrive.Migrations
 
             modelBuilder.Entity("ASPMotoDrive.Models.Motorcycle", b =>
                 {
-                    b.Navigation("CartItems");
-
                     b.Navigation("Orders");
                 });
 

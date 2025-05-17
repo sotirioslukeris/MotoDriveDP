@@ -75,8 +75,8 @@ namespace ASPMotoDrive.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ModelId"] = new SelectList(_context.Models, "Id", "Name", motorcycle.ModelId);
-            return View(motorcycle);
+            return View();
+           
         }
 
 

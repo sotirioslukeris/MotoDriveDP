@@ -25,7 +25,7 @@
 
             
             <a href="@Url.Action("Models", "Motorcycles")" class="back-button">⬅ Обратно към списъка</a>
-            <a asp-action="ShoppingCart" asp-controller="Orders" asp-route-id="@Model.Id" class="back-button"><i class="far fa-shopping-cart"></i> Добави в количката</a>
+            <a asp-action="AddToCart" asp-controller="Orders" asp-route-id="@Model.Id" class="back-button"><i class="far fa-shopping-cart"></i> Добави в количката</a>
         </div>
     </div>
 </div>

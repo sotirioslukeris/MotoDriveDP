@@ -9,12 +9,17 @@ using ASPMotoDrive.Data;
 using ASPMotoDrive.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using System.Text.Json;
+using ASPMotoDrive.Migrations;
+using ASPMotoDrive.Data.Models.Cookies;
 
 namespace ASPMotoDrive.Controllers
 {
+
     [Authorize]
     public class OrdersController : Controller
     {
+
         private readonly ApplicationDbContext _context;
         private readonly UserManager<User> _userManager;
 
@@ -50,46 +55,40 @@ namespace ASPMotoDrive.Controllers
             return View(order);
         }
 
-        // GET: Orders/Create
-        public async Task<IActionResult> ShoppingCart(int? id)
+      
+        public IActionResult ShoppingCart()
         {
-            if(id == null)
-            {
-                return NotFound();
-            }
-            
-            var motorcycle = await _context.Motorcycles.SingleOrDefaultAsync(m => m.Id == id);
+            var cart = CookieHelper.GetObject<Cart>(Request, "Cart") ?? new Cart();
 
-            if(motorcycle == null)
-            {
-                return NotFound();
-            }
-            return View(motorcycle);
+            List<Motorcycle> cartItems = cart.Items;
+
+            return View(cartItems);
         }
 
-        // POST: Orders/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ShoppingCart([Bind("MotorcycleId,Description,Quantity,DateRegister")] Order order)
+        public async Task<IActionResult> ShoppingCart([Bind("MotorcycleId,UserId,DateRegister")] Order order)
         {
-            List<Order> orders = new List<Order>();
-
+           
             if (ModelState.IsValid)
             {
-                order.DateRegister = DateTime.Now;
-                order.UserId = Guid.Parse(_userManager.GetUserId(User));
                 _context.Add(order);
-                orders.Add(order);
                 await _context.SaveChangesAsync();
-
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("FinalisedOrder");
             }
-            
-            
-            return View(orders);
+
+            return View();
         }
+
+       
+
+
+        public IActionResult FinalisedOrder()
+        {
+            return View();
+        }
+
 
         // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -110,6 +109,26 @@ namespace ASPMotoDrive.Controllers
 
 
         
+        public IActionResult AddToCart(int id)
+        { 
+            // Get cart from cookie or create new
+            var cart = CookieHelper.GetObject<Cart>(Request, "Cart") ?? new Cart();
+
+            var motorcycle = _context.Motorcycles.FirstOrDefault(x => x.Id == id);
+
+            // Add new motorcycle to cart
+            cart.Items.Add(motorcycle);
+            
+
+            // Save updated cart back to cookie (expires in 7 days)
+            CookieHelper.SetObject(Response, "Cart", cart, 7);
+
+            return RedirectToAction("ShoppingCart");
+        }
+
+
+
+
         // POST: Orders/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -146,6 +165,19 @@ namespace ASPMotoDrive.Controllers
             ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Id", "Name", order.MotorcycleId);
             return View(order);
         }
+
+        [HttpPost]
+        public IActionResult RemoveFromCart(int id, List<Motorcycle> cart)
+        {
+            
+            var item = cart.FirstOrDefault(m => m.Id == id);
+            if (item != null)
+            {
+                cart.Remove(item);
+            }
+            return View("ShoppingCart",cart);
+        }
+
 
         // GET: Orders/Delete/5
         public async Task<IActionResult> Delete(int? id)

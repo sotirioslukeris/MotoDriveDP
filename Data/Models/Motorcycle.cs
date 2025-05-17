@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+﻿using ASPMotoDrive.Data.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System.ComponentModel;
 
 namespace ASPMotoDrive.Models

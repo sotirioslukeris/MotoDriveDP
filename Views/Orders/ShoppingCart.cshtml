@@ -1,46 +1,42 @@
-﻿@model ASPMotoDrive.Models.Motorcycle
+﻿@model List<ASPMotoDrive.Models.Motorcycle>
 @{
     ViewData["Title"] = "ShoppingCart";
+    
 }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пазарска кошница</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <body>
+    <form asp-action="ShoppingCart" asp-route-data="Model" asp-controller="Orders" method="post">
+        <div class="cart-container">
+            <h1>Пазарска кошница</h1>
 
-    <div class="cart-container">
-        <h1>Пазарска кошница</h1>
+            <div class="cart-items">
 
-        <div class="cart-items">
-           
-            <div class="cart-item" >
-                <img src="@Model.ImageURL" alt="Мотоциклет">
-                <div class="item-details">
-                    <h2>@Model.Models.Brands.Name @Model.Models.Name</h2>
-                    <p>Година: @Model.Models.YearOfManuf</p>
-                    <p>Брой: @Model.Orders.</p>
-                    <p>Цена: @Model.Price</p>
-                    <button class="remove-btn">Премахни</button>
+                <div class="cart-item">
+                    @{
+                        foreach(var item in Model)
+                        {
+                            <img src="@item?.ImageURL" alt="Мотоциклет">
+                        <div class="item-details">
+                            <h2>@item?.Models?.Brands?.Name @item?.Models?.Name</h2>
+                            <p>Година: @item?.Models?.YearOfManuf</p>
+                            <p>Цена: @item?.Price</p>
+                            <button class="remove-btn" asp-action="Delete" asp-controller="Orders">Премахни</button>
+                        </div>
+                            <input type="hidden" name="MotorcycleId" value="@item?.Id" />
+                            <input type="hidden" name="UserId" value="@User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value" />
+                            <input type="hidden" name="DateRegister" value="@DateTime.Now" />
+                        }
+                        
+                    }
+
+                    <button class="checkout-btn" asp-action="ShoppingCart">Поръчай</button>
+
                 </div>
             </div>
 
-           
-        
 
-        <div class="cart-summary">
-                @{
-                    
-                    <h3>
-                         Цена :    
-                    </h3>
-            }
-            
-            <button class="checkout-btn">Поръчай</button>
         </div>
-    </div>
+    
+    </form>
 
 </body>
-</html>
