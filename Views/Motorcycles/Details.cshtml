@@ -21,11 +21,12 @@
             <p><strong>Пробег:</strong> @Model.Mileage км</p>
             <p><strong>Описание:</strong> @Model.Description</p>
 
-            
-
-            
-            <a href="@Url.Action("Models", "Motorcycles")" class="back-button">⬅ Обратно към списъка</a>
-            <a asp-action="AddToCart" asp-controller="Orders" asp-route-id="@Model.Id" class="back-button"><i class="far fa-shopping-cart"></i> Добави в количката</a>
+            <form asp-action="AddToCart" asp-controller="Cart" method="post">
+                <input type="hidden" name="MotorcycleId" value="@Model.Id" />
+               
+                <a href="@Url.Action("Models", "Motorcycles")" class="back-button">⬅ Обратно към списъка</a>
+                <button type="submit" class="back-button"><i class="far fa-shopping-cart"></i> Добави в количката</button>
+            </form>
         </div>
     </div>
 </div>

@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using System.Text.Json;
 using ASPMotoDrive.Migrations;
-using ASPMotoDrive.Data.Models.Cookies;
+
 
 namespace ASPMotoDrive.Controllers
 {
@@ -32,7 +32,17 @@ namespace ASPMotoDrive.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Orders.Include(o => o.Motorcycles);
+            IQueryable<Order> applicationDbContext = _context.Orders
+            .Include(o => o.Motorcycles)
+            .Include(o => o.Motorcycles.Models)
+            .Include(o => o.Users);
+
+            if (User.IsInRole("User"))
+            {
+                applicationDbContext = applicationDbContext
+                    .Where(x => x.Users.UserName == User.Identity.Name);
+            }
+
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -55,33 +65,28 @@ namespace ASPMotoDrive.Controllers
             return View(order);
         }
 
-      
-        public IActionResult ShoppingCart()
-        {
-            var cart = CookieHelper.GetObject<Cart>(Request, "Cart") ?? new Cart();
 
-            List<Motorcycle> cartItems = cart.Items;
-
-            return View(cartItems);
-        }
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ShoppingCart([Bind("MotorcycleId,UserId,DateRegister")] Order order)
+        public async Task<IActionResult> Create([Bind("MotorcycleId,UserId,DateRegister")] Order order)
         {
-           
+
             if (ModelState.IsValid)
             {
+                var userId = _userManager.GetUserId(User);
+                order.DateRegister = DateTime.Now;
                 _context.Add(order);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("FinalisedOrder");
             }
 
+
             return View();
         }
 
-       
+
 
 
         public IActionResult FinalisedOrder()
@@ -105,25 +110,6 @@ namespace ASPMotoDrive.Controllers
             }
             ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Id", "Name", order.MotorcycleId);
             return View(order);
-        }
-
-
-        
-        public IActionResult AddToCart(int id)
-        { 
-            // Get cart from cookie or create new
-            var cart = CookieHelper.GetObject<Cart>(Request, "Cart") ?? new Cart();
-
-            var motorcycle = _context.Motorcycles.FirstOrDefault(x => x.Id == id);
-
-            // Add new motorcycle to cart
-            cart.Items.Add(motorcycle);
-            
-
-            // Save updated cart back to cookie (expires in 7 days)
-            CookieHelper.SetObject(Response, "Cart", cart, 7);
-
-            return RedirectToAction("ShoppingCart");
         }
 
 
@@ -169,13 +155,13 @@ namespace ASPMotoDrive.Controllers
         [HttpPost]
         public IActionResult RemoveFromCart(int id, List<Motorcycle> cart)
         {
-            
+
             var item = cart.FirstOrDefault(m => m.Id == id);
             if (item != null)
             {
                 cart.Remove(item);
             }
-            return View("ShoppingCart",cart);
+            return View("ShoppingCart", cart);
         }
 
 

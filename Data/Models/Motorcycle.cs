@@ -22,6 +22,7 @@ namespace ASPMotoDrive.Models
         public string Colour { get; set; }
         public ICollection<Order> Orders { get; set; }
 
+        public ICollection<CartItem> CartItems { get; set; }
         public Category Category { get; set; }
     }
 }

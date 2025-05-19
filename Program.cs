@@ -23,7 +23,7 @@ builder.Services.AddControllers(op=>op.SuppressImplicitRequiredAttributeForNonNu
 
 var app = builder.Build();
 
-//!!!! Стартиране на Service файла
+//!!!! пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Service пїЅпїЅпїЅпїЅпїЅ
 app.PrepareDataBase().Wait();
 
 // Configure the HTTP request pipeline.

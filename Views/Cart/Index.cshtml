@@ -1,0 +1,54 @@
+﻿@model List<ASPMotoDrive.Data.Models.CartItem>
+@{
+    ViewData["Title"] = "ShoppingCart";
+
+}
+@{
+   
+}
+<body>
+    
+        <div class="cart-container">
+            <h1>Пазарска кошница</h1>
+
+            <div class="cart-items">
+
+                <div class="cart-item">
+                    @{
+                        foreach(var item in Model)
+                        {
+                            <img src="@item?.Motorcycles.ImageURL" alt="Мотоциклет">
+                            <div class="item-details">
+                                <h2>@item?.Motorcycles?.Models?.Brands?.Name @item?.Motorcycles?.Models?.Name</h2>
+                                <p>Година: @item?.Motorcycles?.Models?.YearOfManuf</p>
+                                <p>Цена: @item?.Motorcycles.Price</p>
+
+                                
+                            </div>
+                            <input type="hidden" name="MotorcycleId" value="@item?.MotorcycleId" />
+                          
+                            <input type="hidden" name="DateRegister" value="@DateTime.Now" />
+                            <form asp-action="Delete" asp-route-id="@item?.Id" asp-controller="Cart" method="post">
+                                <button class="remove-btn">Премахни</button>
+                            </form>
+                            
+                        }
+                       
+                   }
+                    
+                    <div class="checkout">
+                    <p>Крайна цена: @Model.Sum(x => x.Motorcycles.Price)лв</p>
+                        <form asp-action="Create" asp-controller="Order" method="post">
+                            <button class="checkout-btn">Поръчай</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    
+    </form>
+
+</body>

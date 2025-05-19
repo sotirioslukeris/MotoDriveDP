@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASPMotoDrive.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250517094229_ShoppingCart")]
-    partial class ShoppingCart
+    [Migration("20250519112336_UserId")]
+    partial class UserId
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,11 +36,15 @@ namespace ASPMotoDrive.Migrations
                     b.Property<int>("MotorcycleId")
                         .HasColumnType("int");
 
+                    b.Property<string>("User")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("MotorcycleId");
 
-                    b.ToTable("CartItem");
+                    b.ToTable("CartItems");
                 });
 
             modelBuilder.Entity("ASPMotoDrive.Models.Brand", b =>
@@ -165,17 +169,20 @@ namespace ASPMotoDrive.Migrations
                     b.Property<int>("MotorcycleId")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("UsersId")
+                    b.Property<string>("UserId1")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("MotorcycleId");
 
-                    b.HasIndex("UsersId");
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("UserId1");
 
                     b.ToTable("Orders");
                 });
@@ -442,8 +449,14 @@ namespace ASPMotoDrive.Migrations
                         .IsRequired();
 
                     b.HasOne("ASPMotoDrive.Models.User", "Users")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ASPMotoDrive.Models.User", null)
                         .WithMany("Orders")
-                        .HasForeignKey("UsersId");
+                        .HasForeignKey("UserId1");
 
                     b.Navigation("Motorcycles");
 
