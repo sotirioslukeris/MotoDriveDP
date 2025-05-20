@@ -84,7 +84,7 @@ namespace ASPMotoDrive.Controllers
         public IActionResult NewMotorcycles(double? price, string? brand, int? year)
         {
             var motorcycles = _context.Motorcycles.Include(x => x.Models).
-               Include(x => x.Models.Brands).Where(x => x.TypeUsage.Equals(TypeUsage.Употребяван)).ToList();
+               Include(x => x.Models.Brands).Where(x => x.TypeUsage.Equals(TypeUsage.Нов)).ToList();
 
             if (motorcycles == null)
             {
@@ -93,6 +93,7 @@ namespace ASPMotoDrive.Controllers
 
            motorcycles = Filters(motorcycles,price, brand, year, null);
 
+            ViewBag.Brands = _context.Brands.ToList();
             return View(motorcycles);
         }
 
@@ -106,6 +107,7 @@ namespace ASPMotoDrive.Controllers
                 return NotFound();
             }
 
+            ViewBag.Brands = _context.Brands.ToList();
             motorcycles = Filters(motorcycles,price, brand, year, null);
             return View(motorcycles);
         }
@@ -134,7 +136,7 @@ namespace ASPMotoDrive.Controllers
             ViewData["ModelId"] = new SelectList(_context.Models, "Id", "Name", motorcycle.ModelId);
             return View(motorcycle);
         }
-        //GET/Models
+        
 
         public List<Motorcycle> Filters(List<Motorcycle> motorcycles,double? price, string? brand, int? year, string? typeUsage)
         {
@@ -185,6 +187,8 @@ namespace ASPMotoDrive.Controllers
              .Include(m => m.Models.Brands).ToList();
 
             motorcycles = Filters(motorcycles,price,brand,year,typeUsage);
+
+            ViewBag.Brands = _context.Brands.ToList();
 
             return View(motorcycles);
 

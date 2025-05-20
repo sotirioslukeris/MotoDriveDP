@@ -14,36 +14,50 @@
     <header>
         <nav>
             <ul class="nav-content">
-                
+
                 <li class="nav-left"><a asp-action="Index" asp-controller="Home" onclick="location.reload()">Начало</a></li>
 
-                    @if (User.IsInRole("Admin"))
-                    {
+                @if (User.IsInRole("Admin"))
+                {
                     <li class="nav-left"><a asp-action="Index" asp-controller="Brands">Марки</a></li>
                     <li class="nav-left"><a asp-action="Index" asp-controller="Models">Модели</a></li>
-                    }
+                }
 
                 <li class="nav-left"><a asp-action="Models" asp-controller="Motorcycles">Марка и модели</a></li>
 
                 <li class="dropdown">
-                    <a asp-action="Index" asp-controller="Motorcycles">Мотоциклети</a>
-                    <ul class="dropdown-menu">
-                        <li><a asp-action="NewMotorcycles" asp-controller="Motorcycles">Нови мотоциклети</a></li>
-                        <li><a asp-action="UsedMotorcycles" asp-controller="Motorcycles">Употребявани мотоциклети</a></li>
-                    </ul>
+                    @{
+                        if (User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Index" asp-controller="Motorcycles"> Мотоциклети </a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-action="NewMotorcycles" asp-controller="Motorcycles">Нови мотоциклети</a></li>
+                                <li><a asp-action="UsedMotorcycles" asp-controller="Motorcycles"> Употребявани мотоциклети</a></li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <a style="text-decoration:none"> Мотоциклети </a>
+                            <ul class="dropdown-menu">
+                                <li><a asp-action="NewMotorcycles" asp-controller="Motorcycles">Нови мотоциклети</a></li>
+                                <li><a asp-action="UsedMotorcycles" asp-controller="Motorcycles"> Употребявани мотоциклети</a></li>
+                            </ul>
+                        }
+                    }
+
                 </li>
-                
+
                 <li class="nav-logo">
                     <a asp-action="Index" asp-controller="Home" onclick="location.reload()">
                         <img src="~/Images/de8bae12-7b90-46d1-89f6-9ff806d2dca3.png" alt="Logo" />
                     </a>
                 </li>
-               
-               
+
+
                 <li class="nav-right"><a asp-action="Contacts" asp-controller="Home">Контакти и сервиз</a></li>
-               
-                
-              
+
+
+
                 @{
                     if (string.IsNullOrEmpty(User.Identity.Name))
                     {
@@ -55,27 +69,47 @@
                     }
                     else
                     {
+                        if (User.IsInRole("User"))
+                        {
+                            <li class="right-corner logged-user dropdown">
+                                <a>Потребител: @User.Identity.Name</a>
+                                <ul class="dropdown-menu">
+                                    <li><a asp-action="Index" asp-controller="Cart">Пазарска кошница</a></li>
+                                    <li><a asp-area="Identity" asp-page="/Account/Logout">Изход</a></li>
 
-                        <li class="nav-right logged-user dropdown">
-                            <a>Потребител: @User.Identity.Name</a>
-                        <ul class="dropdown-menu">
-                            <li><a asp-action="Index" asp-controller="Cart">Пазарска кошница</a></li>
-                            <li><a asp-action="Index" asp-controller="Orders">Моите поръчки</a></li>
-                            <li><a asp-area="Identity" asp-page="/Account/Logout">Изход</a></li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-right logged-user dropdown">
+                                <a>Потребител: @User.Identity.Name</a>
+                                <ul class="dropdown-menu">
+                                    <li><a asp-action="Index" asp-controller="Cart">Пазарска кошница</a></li>
+                                    @{
+                                        if (User.IsInRole("Admin"))
+                                        {
+                                            <li><a asp-action="Index" asp-controller="Orders">Поръчки</a></li>
+                                        }
+                                    }
 
-                        </ul>
-                        </li>
-                        
+                                    <li><a asp-area="Identity" asp-page="/Account/Logout">Изход</a></li>
+
+                                </ul>
+                            </li>
+                        }
+
+
                     }
 
                 }
-                   
-                       
-                   
 
-                 
-                
-               
+
+
+
+
+
+
 
             </ul>
         </nav>

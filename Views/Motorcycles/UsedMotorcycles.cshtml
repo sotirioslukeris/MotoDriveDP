@@ -17,15 +17,10 @@
                     <select id="brand" action="models.cshtml" name="brand">
                         <option value="all">Всички</option>
                         @{
-                            foreach (var moto in Model
-                            .GroupBy(x => x.Models.Brands.Name)
-                            .Select(g => g.First())
-                            .ToList())
-                            {
 
-                                <option value="@moto.Models.Brands.Name">
-                                    @moto.Models.Brands.Name
-                                </option>
+                            @foreach (var brand in (List<Brand>)ViewBag.Brands)
+                            {
+                                <option value="@brand.Name">@brand.Name</option>
                             }
                         }
                     </select>

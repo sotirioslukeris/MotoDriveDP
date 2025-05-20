@@ -6,36 +6,24 @@
 
 <h1>Index</h1>
 
-<p>
-    
-</p>
 <table class="table">
-    <thead>
+<thead>
+    <tr>
+        <th>
+            Потребител
+        </th>
+            <th>
+                Дата на поръчката
+            </th>
+    </tr>
+    
+      
+</thead>
+<tbody>
+    @foreach (var item in Model)
+    {
         <tr>
-
-            <th>Потребител</th>
-
-            <th>Мотоциклет</th>
-
-
-            <th>
-                Описание
-            </th>
-
-            <th>
-                Брой
-            </th>
-            <th>
-                Дата на регистрация
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
+            <td>
                 @if (item.Users != null)
                 {
                     @item.Users.UserName
@@ -44,21 +32,19 @@
                 {
                     <span>User not found</span>
                 }
-               </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Motorcycles.Models.Name)
-                </td>
-               
+            </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.DateRegister)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRegister)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Редактирай</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Детайли</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Изтрий</a>
+            </td>
+        </tr>
+    }
+</tbody>
 </table>

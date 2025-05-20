@@ -163,7 +163,7 @@ namespace ASPMotoDrive.Migrations
                     b.Property<DateTime>("DateRegister")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("MotorcycleId")
+                    b.Property<int?>("MotorcycleId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
@@ -439,11 +439,9 @@ namespace ASPMotoDrive.Migrations
 
             modelBuilder.Entity("ASPMotoDrive.Models.Order", b =>
                 {
-                    b.HasOne("ASPMotoDrive.Models.Motorcycle", "Motorcycles")
+                    b.HasOne("ASPMotoDrive.Models.Motorcycle", null)
                         .WithMany("Orders")
-                        .HasForeignKey("MotorcycleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MotorcycleId");
 
                     b.HasOne("ASPMotoDrive.Models.User", "Users")
                         .WithMany()
@@ -454,8 +452,6 @@ namespace ASPMotoDrive.Migrations
                     b.HasOne("ASPMotoDrive.Models.User", null)
                         .WithMany("Orders")
                         .HasForeignKey("UserId1");
-
-                    b.Navigation("Motorcycles");
 
                     b.Navigation("Users");
                 });

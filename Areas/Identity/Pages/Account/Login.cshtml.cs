@@ -106,7 +106,15 @@ namespace ASPMotoDrive.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+
+                    if (Url.IsLocalUrl(returnUrl) && !returnUrl.Contains("/Logout", StringComparison.OrdinalIgnoreCase))
+                    {
+                        return LocalRedirect(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToPage("/Index");
+                    }
                 }
                 if (result.RequiresTwoFactor)
                 {

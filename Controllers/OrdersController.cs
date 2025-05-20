@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using System.Text.Json;
 using ASPMotoDrive.Migrations;
+using ASPMotoDrive.Data.Models;
 
 
 namespace ASPMotoDrive.Controllers
@@ -33,8 +34,6 @@ namespace ASPMotoDrive.Controllers
         public async Task<IActionResult> Index()
         {
             IQueryable<Order> applicationDbContext = _context.Orders
-            .Include(o => o.Motorcycles)
-            .Include(o => o.Motorcycles.Models)
             .Include(o => o.Users);
 
             if (User.IsInRole("User"))
@@ -42,6 +41,7 @@ namespace ASPMotoDrive.Controllers
                 applicationDbContext = applicationDbContext
                     .Where(x => x.Users.UserName == User.Identity.Name);
             }
+          
 
             return View(await applicationDbContext.ToListAsync());
         }
@@ -55,7 +55,6 @@ namespace ASPMotoDrive.Controllers
             }
 
             var order = await _context.Orders
-                .Include(o => o.Motorcycles)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (order == null)
             {
@@ -70,7 +69,7 @@ namespace ASPMotoDrive.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MotorcycleId,UserId,DateRegister")] Order order)
+        public async Task<IActionResult> Create([Bind("MotorcycleId,UserId,Quantity,DateRegister")] Order order)
         {
 
             if (ModelState.IsValid)
@@ -81,7 +80,7 @@ namespace ASPMotoDrive.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("FinalisedOrder");
             }
-
+            
 
             return View();
         }
@@ -108,7 +107,7 @@ namespace ASPMotoDrive.Controllers
             {
                 return NotFound();
             }
-            ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Id", "Name", order.MotorcycleId);
+           
             return View(order);
         }
 
@@ -148,21 +147,12 @@ namespace ASPMotoDrive.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["MotorcycleId"] = new SelectList(_context.Motorcycles, "Id", "Name", order.MotorcycleId);
+           
             return View(order);
         }
 
         [HttpPost]
-        public IActionResult RemoveFromCart(int id, List<Motorcycle> cart)
-        {
-
-            var item = cart.FirstOrDefault(m => m.Id == id);
-            if (item != null)
-            {
-                cart.Remove(item);
-            }
-            return View("ShoppingCart", cart);
-        }
+       
 
 
         // GET: Orders/Delete/5
@@ -174,7 +164,6 @@ namespace ASPMotoDrive.Controllers
             }
 
             var order = await _context.Orders
-                .Include(o => o.Motorcycles)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (order == null)
             {

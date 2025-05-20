@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace ASPMotoDrive.Controllers
 {
@@ -27,8 +28,10 @@ namespace ASPMotoDrive.Controllers
             if(cartItems==null)
             {
                 return NotFound();
-            }   
+            }
 
+            ViewBag.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            
             return View(cartItems);
         }
 
@@ -64,42 +67,21 @@ namespace ASPMotoDrive.Controllers
         }
 
 
-
-
-        // POST: CartController1/Edit/5
+        
+        // POST: Motorcycles/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-       
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> RemoveFromCart(int id)
         {
-            return View();
-        }
+            var cartItem = await _context.CartItems.FindAsync(id);
+            if (cartItem != null)
+            {
+                _context.CartItems.Remove(cartItem);
+            }
 
-        // POST: CartController1/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

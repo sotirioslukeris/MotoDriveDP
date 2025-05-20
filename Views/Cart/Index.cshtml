@@ -4,51 +4,50 @@
 
 }
 @{
-   
+
 }
 <body>
-    
-        <div class="cart-container">
-            <h1>Пазарска кошница</h1>
 
-            <div class="cart-items">
 
-                <div class="cart-item">
-                    @{
-                        foreach(var item in Model)
-                        {
-                            <img src="@item?.Motorcycles.ImageURL" alt="Мотоциклет">
-                            <div class="item-details">
-                                <h2>@item?.Motorcycles?.Models?.Brands?.Name @item?.Motorcycles?.Models?.Name</h2>
-                                <p>Година: @item?.Motorcycles?.Models?.YearOfManuf</p>
-                                <p>Цена: @item?.Motorcycles.Price</p>
+    <div class="row">
+        <section class="cart-container products col d-flex flex-wrap align-content-start ">
+            <h1 class="cart-heading col-9 text-center">Пазарска Кошница</h1>
 
-                                
-                            </div>
-                            <input type="hidden" name="MotorcycleId" value="@item?.MotorcycleId" />
-                          
-                            <input type="hidden" name="DateRegister" value="@DateTime.Now" />
-                            <form asp-action="Delete" asp-route-id="@item?.Id" asp-controller="Cart" method="post">
-                                <button class="remove-btn">Премахни</button>
-                            </form>
-                            
-                        }
-                       
-                   }
-                    
-                    <div class="checkout">
-                    <p>Крайна цена: @Model.Sum(x => x.Motorcycles.Price)лв</p>
-                        <form asp-action="Create" asp-controller="Order" method="post">
-                            <button class="checkout-btn">Поръчай</button>
+            @{
+                foreach (var moto in Model)
+                {
+                    <div class="motorcycle cart card">
+                        <p>@moto?.Motorcycles?.Models?.Brands?.Name @moto?.Motorcycles?.Models?.Name </p>
+
+                        <img id="product-image" src="@moto?.Motorcycles?.ImageURL" />
+                        <p>Година : @moto?.Motorcycles.Models?.YearOfManuf </p>
+                        <p>Цена : @moto?.Motorcycles.Price лв. </p>
+                        <a class="button-link" asp-action="Details" asp-controller="Motorcycles" asp-route-id="@moto?.MotorcycleId" class="more-info">Повече информация</a>
+                        <form asp-action="RemoveFromCart" asp-controller="Cart" method="post">
+                            <input type="hidden" value="@moto?.Id" name="id" />
+                            <button class="remove-btn">Премахни</button>
                         </form>
                     </div>
+                }
 
-                </div>
-            </div>
+            }
+        </section>
+    </div>
+    <footer class="checkout">
+        <form asp-action="Create" asp-controller="Orders" method="post">
+            <input type="hidden" name="DateRegister" value="@DateTime.Now" />
+            <input type="hidden" name="UserId" value="@ViewBag.UserId" />
+            <input type="hidden" name="Quantiy" value="@Model.Count" />
+            <p id="final-price">Крайна цена: @Model.Sum(x => x.Motorcycles.Price)лв</p>
+            <button class="checkout-btn">Поръчай</button>
+        </form>
+        
+    </footer>
 
 
-        </div>
-    
-    </form>
+
+
+
+
 
 </body>

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ASPMotoDrive")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fabb2c4af653f1b9fffafcfe055ef21b6e8bae4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59e229cd6de19ad175495c282f21291ab06d7435")]
 [assembly: System.Reflection.AssemblyProductAttribute("ASPMotoDrive")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ASPMotoDrive")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
